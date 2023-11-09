@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "364307399032",
+    "project_id": "auth-firebase-64e73",
+    "storage_bucket": "auth-firebase-64e73.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364307399032:android:f34b371f0f3d80fb20088d",
+        "android_client_info": {
+          "package_name": "com.example.hikewise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgGeKbgVISKmJQ2UmCW0EMafOlxPZz3M4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
