@@ -10,6 +10,8 @@ import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
 import com.example.hikewise.R
 import com.example.hikewise.databinding.ActivitySplashScreenBinding
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
@@ -21,15 +23,18 @@ class SplashScreenActivity : AppCompatActivity() {
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        val fade = Fade()
+        window.enterTransition = fade
+        window.exitTransition = fade
         Handler().postDelayed({
-            val intent = Intent(this, LoginActivity::class.java)
-            val optionCompat: ActivityOptionsCompat =
-                ActivityOptionsCompat.makeSceneTransitionAnimation(
-                    this,
-                    Pair(binding.imageViewLogo, "logo"),
-                    Pair(binding.textViewLogo, "textLogo")
-                )
-            startActivity(intent, optionCompat.toBundle())
+            val user = Firebase.auth.currentUser
+            val intent = if (user != null) {
+                Intent(this, MainActivity::class.java)
+            } else {
+                Intent(this, LoginActivity::class.java)
+            }
+            startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle())
             finish()
         }, 3000)
     }

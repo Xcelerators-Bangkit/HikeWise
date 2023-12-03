@@ -15,12 +15,15 @@ import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
 import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import com.example.hikewise.R
 import com.example.hikewise.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var auth: FirebaseAuth
 
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,8 +33,33 @@ class LoginActivity : AppCompatActivity() {
         animation()
         spanCustom()
 
+        auth = FirebaseAuth.getInstance()
 
+        binding.btnLogin.setOnClickListener {
+            val email = binding.emailEditText.text.toString()
+            val password = binding.passwordEditText.text.toString()
 
+            login(email, password)
+        }
+
+    }
+
+    private fun login(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
+            if (it.isSuccessful) {
+                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                val dialog = AlertDialog.Builder(this)
+                dialog.setTitle("Login Failed")
+                dialog.setMessage(it.exception?.message)
+                dialog.setPositiveButton("OK") { _, _ ->
+
+                }
+                dialog.show()
+            }
+        }
     }
 
 
