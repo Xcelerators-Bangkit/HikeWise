@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-  
+
+    <item
+        android:id="@+id/menu_home"
+        android:title="Home"
+        android:icon="@drawable/icon_home_line"/>
+
+    <item
+        android:id="@+id/menu_weather"
+        android:title="Weather"
+        android:icon="@drawable/icon_weather_line"/>
+
+    <item
+        android:id="@+id/menu_history"
+        android:title="History"
+        android:icon="@drawable/icon_calendar_line"/>
+
+    <item
+        android:id="@+id/menu_profile"
+        android:title="Profile"
+        android:icon="@drawable/icon_person_line"/>
 </menu>
