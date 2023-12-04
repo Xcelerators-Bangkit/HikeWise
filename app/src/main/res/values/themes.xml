@@ -4,7 +4,6 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorOnPrimary">@color/primary</item>
         <item name="colorOutline">@color/primary</item>
         <item name="colorOnPrimaryContainer">@color/white</item>
         <item name="colorSurfaceContainer">@color/white</item>
