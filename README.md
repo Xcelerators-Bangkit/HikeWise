@@ -6,3 +6,6 @@ Hiking is a sport that requires high skill, strength, intelligence, and enduranc
  - How can we simplify the mountaineering registration process?
  - How do climbers know the weather forecast during a climb?
 
+
+
+![logo1](https://github.com/luthfiadilal/HikeWise/assets/98248550/304f3941-538e-4593-9581-c4ffeea47cf1)
