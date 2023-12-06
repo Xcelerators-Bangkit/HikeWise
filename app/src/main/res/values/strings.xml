@@ -1,14 +1,41 @@
 <resources>
     <string name="app_name">HikeWise</string>
-    <string name="logo_name">Hike Wise</string>
+    <string name="logo_name">HikeWise</string>
     <string name="login">Login</string>
     <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="full_name"> Full Name</string>
     <string name="password">Password</string>
-    <string name="username_email">username/email</string>
-    <string name="passwordHint">password</string>
-    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="user_email">Email</string>
+    <string name="passwordHint">Password</string>
+    <string name="don_t_have_an_account">Don\'t have an account yet?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
     <string name="register">Register</string>
     <string name="do_you_have_an_account">Do you have an account?</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="question_weather">Cek cuaca untuk memulai pendakianmu dan prediksi kedepannya</string>
+    <string name="from_weather">From</string>
+    <string name="to_weather">To</string>
+    <string name="process">Process</string>
+    <string name="article_name">Article Name</string>
+    <string name="sumber">Sumber</string>
+    <string name="mountain_name">Mountain Name</string>
+    <string name="date">Date</string>
+    <string name="location">Location</string>
+    <string name="ketinggian">Ketinggian</string>
+    <string name="status">Status</string>
+    <string name="desc_mountain">Lorem ipsum dolor sit amet consectetur. Vitae tortor magna quisque nisl magna. Malesuada quam arcu eget sociis. Sed sollicitudin a sit nam tristique arcu. Pharetra erat non massa feugiat pellentesque. Tempus eget est vitae sed quam nunc at nunc. In pellentesque nulla facilisi eu pulvinar suscipit placerat interdum. Fusce non mi nunc at malesuada malesuada ut. Elementum augue a feugiat molestie sapien. Amet habitasse fusce commodo dui. Eleifend arcu lobortis nisl gravida nibh rhoncus sapien justo imperdiet. Senectus sed sed proin a curabitur ut mauris euismod velit.</string>
+    <string name="count_mountain">Rp. 50.0000</string>
+    <string name="desc_article">Lorem ipsum dolor sit amet consectetur. Vitae tortor magna quisque nisl magna. Malesuada quam arcu eget sociis. Sed sollicitudin a sit nam tristique arcu. Pharetra erat non massa feugiat pellentesque. Tempus eget est vitae sed quam nunc at nunc. In pellentesque nulla facilisi eu pulvinar suscipit placerat interdum. Fusce non mi nunc at malesuada malesuada ut. Elementum augue a feugiat molestie sapien. Amet habitasse fusce commodo dui. Eleifend arcu lobortis nisl gravida nibh rhoncus sapien justo imperdiet. Senectus sed sed proin a curabitur ut mauris euismod velit.</string>
+    <string name="search">Search</string>
+    <string name="article">Article</string>
+    <string name="check_equipment">Check Equipment</string>
+    <string name="tagline_equip">Please check your equipment before hiking</string>
+    <string name="check_health">Check Health</string>
+    <string name="tagline_health">Please check your health before hiking</string>
+    <string name="desc_equip">Sebelum melakukan pendakian, cek dulu yaa perlengkapannya untuk keselamatan selama pendakian. :) Selamat mendaki !</string>
+    <string name="desc_health">Sebelum melakukan pendakian, cek dulu yaa kesehatannya untuk keselamatan selama pendakian. :) Selamat mendaki !</string>
+    <string name="next">Next</string>
 </resources>

@@ -39,6 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="Check Up"
+                android:fontFamily="sans-serif-medium"
                 android:textColor="@color/white"
                 android:textSize="32sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -63,23 +64,26 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:text="Indonesia Mountain"
+        android:fontFamily="sans-serif-medium"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/see_mountain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:text="see all"
+        android:text="See all"
+        android:textColor="@color/primary"
+        android:fontFamily="sans-serif-medium"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerView_mountain"
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:layout_marginTop="15dp"
@@ -99,24 +103,29 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="7dp"
         android:text="Article"
+        android:fontFamily="sans-serif-medium"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_mountain" />
 
 
     <TextView
+        android:id="@+id/see_article"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:text="see all"
+        android:text="See all"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/primary"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_mountain" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_article"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="210dp"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
         android:paddingStart="20dp"
@@ -135,7 +144,6 @@
         android:layout_marginBottom="24dp"
         android:src="@drawable/heroicons_ticket"
         android:backgroundTint="@color/primary"
-        
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

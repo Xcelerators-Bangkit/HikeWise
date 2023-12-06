@@ -18,7 +18,8 @@
             android:layout_height="?attr/actionBarSize"
             android:elevation="2dp"
             app:title="User"
-            app:subtitle="Hello there"
+            app:subtitle="Hello there !"
+            app:titleTextColor="@color/primary"
             app:menu="@menu/menu_bar"
             />
 

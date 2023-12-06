@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
 
-
         navView.setOnNavigationItemSelectedListener { menuItem ->
             when(menuItem.itemId){
                 R.id.menu_home -> {

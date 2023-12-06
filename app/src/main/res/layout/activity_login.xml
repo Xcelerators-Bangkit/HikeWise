@@ -42,7 +42,7 @@
         android:id="@+id/heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="140dp"
         android:text="@string/login"
         android:textSize="42sp"
         android:textStyle="bold"
@@ -58,6 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/email"
+        android:fontFamily="sans-serif-medium"
         android:textSize="16sp"
         android:alpha="0"
         app:layout_constraintStart_toStartOf="@+id/emailTextLayout"
@@ -68,9 +69,13 @@
         android:id="@+id/emailTextLayout"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="54dp"
         android:layout_marginTop="4dp"
         app:boxStrokeWidth="2dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
         android:alpha="0"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
@@ -83,7 +88,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/username_email"
+            android:hint="@string/user_email"
+            android:fontFamily="sans-serif-light"
+            android:textSize="14dp"
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -95,6 +102,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/password"
         android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
         android:alpha="0"
         app:layout_constraintStart_toStartOf="@+id/emailTextLayout"
         app:layout_constraintTop_toBottomOf="@+id/emailTextLayout"
@@ -104,9 +112,13 @@
         android:id="@+id/passwordTextLayout"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="54dp"
         android:layout_marginTop="8dp"
         app:boxStrokeWidth="2dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
         app:endIconMode="password_toggle"
         android:alpha="0"
         app:layout_constraintEnd_toEndOf="@+id/emailTextLayout"
@@ -120,6 +132,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/passwordHint"
+            android:fontFamily="sans-serif-light"
+            android:textSize="14dp"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,25 +141,29 @@
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginTop="26dp"
-        android:text="@string/login"
+        android:layout_marginBottom="100dp"
         android:alpha="0"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/sign_in"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/passwordTextLayout"
         app:layout_constraintStart_toStartOf="@+id/passwordTextLayout"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextLayout"
-        tools:alpha="1"/>
+        tools:alpha="1" />
 
     <TextView
         android:id="@+id/donthaveaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/don_t_have_an_account"
+        android:layout_marginTop="10dp"
         android:alpha="0"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/don_t_have_an_account"
+        android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-        tools:alpha="1"/>
+        tools:alpha="1" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -153,7 +171,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="246dp" />
+        app:layout_constraintGuide_begin="240dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
