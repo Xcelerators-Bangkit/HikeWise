@@ -5,6 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOutline">@color/primary</item>
+        <item name="colorSurface">@color/white</item>
         <item name="colorOnPrimaryContainer">@color/white</item>
         <item name="colorSurfaceContainer">@color/white</item>
         <item name="colorOnSurfaceVariant">@color/primary</item>
@@ -12,10 +13,6 @@
         <item name="bottomNavigationStyle">@style/BottomNavigationView</item>
     </style>
 
-    <style name="navigationTheme" parent="ThemeOverlay.Material3.NavigationView">
-
-        <item name="colorSurface"></item>
-    </style>
 
     <style name="BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
@@ -23,11 +20,10 @@
 
     <style name="ThemeOverlay.App.BottomNavigationView" parent="">
         <item name="colorPrimary">@color/white</item>
+        <item name="colorSurfaceContainer">@color/white</item>
         <item name="colorOnPrimary">@color/primary</item>
-        <item name="colorSecondary">@color/primary</item>
         <item name="colorOnSecondary">@color/primary</item>
-        <item name="colorPrimaryContainer">@color/primary</item>
-        <item name="colorSurface">@color/white</item>
+        <item name="colorSecondaryContainer">#B9F3EA</item>
         <item name="colorOnSurfaceVariant">@color/primary</item>
     </style>
     <style name="Theme.HikeWise" parent="Base.Theme.HikeWise" />

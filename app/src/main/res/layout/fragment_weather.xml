@@ -52,7 +52,7 @@
 
         <AutoCompleteTextView
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="wrap_content"
             android:hint="@string/from_weather"
             android:inputType="none"/>
 
@@ -90,7 +90,7 @@
 
         <AutoCompleteTextView
             android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:layout_height="wrap_content"
             android:inputType="none"
             android:hint="@string/to_weather"/>
 
@@ -104,7 +104,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="50dp"
         android:text="@string/process"
-        android:textSize="24dp"
+        android:textSize="20sp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

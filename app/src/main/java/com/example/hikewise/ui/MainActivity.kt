@@ -4,17 +4,27 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.hikewise.R
 import com.example.hikewise.databinding.ActivityMainBinding
+import com.example.hikewise.pref.ThemePreference
+import com.example.hikewise.pref.ThemeViewModel
+import com.example.hikewise.pref.ThemeViewModelFactory
+import com.example.hikewise.pref.dataStore
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var mainViewModel: ThemeViewModel
 
     private val iconMap = mapOf(
         R.id.menu_home to Pair(R.drawable.icon_home_line, R.drawable.icon_home_fill),
@@ -59,6 +69,71 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        val pref = ThemePreference.getInstance(this.dataStore)
+        mainViewModel = ViewModelProvider(this, ThemeViewModelFactory(pref))[ThemeViewModel::class.java]
+        binding.toolbar.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId){
+                R.id.action_theme -> {
+                    toggleNightMode()
+                    true
+                }
+                else -> false
+            }
+
+        }
+
+        mainViewModel.getThemeSetting().observe(this) { isNightMode ->
+            // Set tema berdasarkan pengaturan yang diperbarui
+            val newNightMode = if (isNightMode) {
+                AppCompatDelegate.MODE_NIGHT_YES // Aktifkan mode gelap
+            } else {
+                AppCompatDelegate.MODE_NIGHT_NO // Matikan mode gelap
+            }
+
+            AppCompatDelegate.setDefaultNightMode(newNightMode)
+
+            // Set ikon menu berdasarkan tema yang aktif
+            val iconId = if (isNightMode) {
+                R.drawable.quill_sun
+            } else {
+                R.drawable.quill_moon
+            }
+            binding.toolbar.menu.findItem(R.id.action_theme)?.icon =
+                ContextCompat.getDrawable(this, iconId)
+
+        }
+
+    }
+
+
+
+    private fun toggleNightMode() {
+        val isNightMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+
+        lifecycleScope.launch {
+            mainViewModel.saveThemeSetting(!isNightMode)
+        }
+
+        // Set tema berdasarkan preferensi yang diperbarui
+        val newNightMode = if (!isNightMode) {
+            AppCompatDelegate.MODE_NIGHT_YES // Aktifkan mode gelap
+        } else {
+            AppCompatDelegate.MODE_NIGHT_NO // Matikan mode gelap
+        }
+
+        AppCompatDelegate.setDefaultNightMode(newNightMode)
+
+        val iconResId = if (newNightMode == AppCompatDelegate.MODE_NIGHT_YES) {
+            R.drawable.quill_moon
+        } else {
+            R.drawable.quill_sun
+        }
+
+        // Set ikon menu
+        binding.toolbar.menu.findItem(R.id.action_theme)?.icon =
+            ContextCompat.getDrawable(this, iconResId)
+
 
     }
 

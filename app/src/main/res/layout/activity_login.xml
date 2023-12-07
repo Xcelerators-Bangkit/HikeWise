@@ -7,6 +7,14 @@
     tools:context=".ui.LoginActivity">
 
     <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/vector_login"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/Imagelogo"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -40,46 +48,48 @@
 
     <TextView
         android:id="@+id/heading"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:text="@string/login"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-80dp"
+        android:alpha="0"
+        android:text="Welcome Back"
+        android:textColor="@color/primary"
         android:textSize="42sp"
         android:textStyle="bold"
-        android:alpha="0"
-        android:textColor="@color/primary"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:alpha="1"/>
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:alpha="1" />
 
     <TextView
         android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/email"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="16sp"
+        android:layout_marginTop="20dp"
         android:alpha="0"
-        app:layout_constraintStart_toStartOf="@+id/emailTextLayout"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        tools:alpha="1"/>
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/email"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/heading"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        tools:alpha="1" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTextLayout"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="4dp"
-        app:boxStrokeWidth="2dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusBottomEnd="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
         android:alpha="0"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeWidth="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/textViewEmail"
         app:layout_constraintTop_toBottomOf="@+id/textViewEmail"
         tools:alpha="1">
 
@@ -89,8 +99,6 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/user_email"
-            android:fontFamily="sans-serif-light"
-            android:textSize="14dp"
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -111,18 +119,18 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordTextLayout"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
-        android:layout_height="54dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:boxStrokeWidth="2dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:endIconMode="password_toggle"
         android:alpha="0"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeWidth="2dp"
+        app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="@+id/emailTextLayout"
-        app:layout_constraintStart_toStartOf="@+id/emailTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/textViewPassword"
         app:layout_constraintTop_toBottomOf="@+id/textViewPassword"
         tools:alpha="1">
 
@@ -132,20 +140,18 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/passwordHint"
-            android:fontFamily="sans-serif-light"
-            android:textSize="14dp"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
-        android:layout_height="52dp"
+        android:layout_height="56dp"
         android:layout_marginBottom="100dp"
         android:alpha="0"
         android:fontFamily="sans-serif-medium"
         android:text="@string/sign_in"
-        android:textSize="24dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/passwordTextLayout"
         app:layout_constraintStart_toStartOf="@+id/passwordTextLayout"
@@ -164,6 +170,8 @@
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
         tools:alpha="1" />
+
+
 
 
     <androidx.constraintlayout.widget.Guideline
