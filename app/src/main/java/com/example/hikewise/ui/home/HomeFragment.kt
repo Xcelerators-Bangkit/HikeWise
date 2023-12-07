@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.example.hikewise.R
 import com.example.hikewise.databinding.FragmentHomeBinding
 import com.example.hikewise.ui.AllArticleActivity
+import com.example.hikewise.ui.BookingActivity
 import com.example.hikewise.ui.CheckUpActivity
 import com.example.hikewise.ui.DetailArticleActivity
 import com.example.hikewise.ui.DetailMountainActivity
@@ -29,17 +30,23 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        binding.seeMountain.setOnClickListener {
-            val intent = Intent(requireContext(), SearchMountainActivity::class.java)
-            startActivity(intent)
-        }
-        binding.seeArticle.setOnClickListener {
-            val intent = Intent(requireContext(), AllArticleActivity::class.java)
-            startActivity(intent)
-        }
-        binding.card.setOnClickListener {
-            val intent = Intent(requireContext(), CheckUpActivity::class.java)
-            startActivity(intent)
+        binding.apply {
+            card.setOnClickListener {
+                val intent = Intent(requireContext(), CheckUpActivity::class.java)
+                startActivity(intent)
+            }
+            seeArticle.setOnClickListener {
+                val intent = Intent(requireContext(), AllArticleActivity::class.java)
+                startActivity(intent)
+            }
+            seeMountain.setOnClickListener {
+                val intent = Intent(requireContext(), SearchMountainActivity::class.java)
+                startActivity(intent)
+            }
+            fabBooking.setOnClickListener {
+                val intent = Intent(requireContext(), BookingActivity::class.java)
+                startActivity(intent)
+            }
         }
         return binding.root
     }

@@ -38,4 +38,12 @@
     <string name="desc_equip">Sebelum melakukan pendakian, cek dulu yaa perlengkapannya untuk keselamatan selama pendakian. :) Selamat mendaki !</string>
     <string name="desc_health">Sebelum melakukan pendakian, cek dulu yaa kesehatannya untuk keselamatan selama pendakian. :) Selamat mendaki !</string>
     <string name="next">Next</string>
+    <string name="subtitle_welcome">Jadilah pendaki yang bijaksana</string>
+    <string name="big_title">let\'s go hiking with HikeWise</string>
+    <string name="explore">Explore</string>
+    <string name="subtitle_article">Subtitle article</string>
+    <string name="address">Address</string>
+    <string name="mountain">Mountain</string>
+    <string name="price">Price</string>
+    <string name="success">Success</string>
 </resources>
