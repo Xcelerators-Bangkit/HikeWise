@@ -32,7 +32,7 @@
         android:layout_marginTop="-10dp"
         android:text="@string/logo_name"
         android:textSize="22sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintBottom_toBottomOf="@+id/logo"
         app:layout_constraintStart_toEndOf="@+id/logo"
         app:layout_constraintTop_toTopOf="@+id/logo" />
@@ -50,10 +50,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="-80dp"
-        android:text="Create Account"
+        android:text="@string/create_account"
         android:textColor="@color/primary"
         android:textSize="42sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -61,8 +61,8 @@
         android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/email"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/textView4"
@@ -90,6 +90,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/user_email"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -100,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/password"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/poppins_medium"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/emailTextLayout"
         app:layout_constraintTop_toBottomOf="@+id/emailTextLayout" />
@@ -127,6 +129,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/passwordHint"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -134,10 +138,11 @@
         android:id="@+id/btnRegister"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:fontFamily="sans-serif-medium"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="70dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/sign_up"
         android:textSize="20sp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/passwordTextLayout"
         app:layout_constraintStart_toStartOf="@+id/passwordTextLayout" />
@@ -147,9 +152,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/do_you_have_an_account"
-        android:textSize="14dp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/btnRegister"
         app:layout_constraintStart_toStartOf="@+id/btnRegister"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister" />

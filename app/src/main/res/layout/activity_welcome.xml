@@ -25,7 +25,7 @@
         android:layout_marginTop="100dp"
         android:text="@string/logo_name"
         android:textSize="34sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
         android:textColor="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,6 +41,7 @@
         android:text="@string/subtitle_welcome"
         android:textColor="@color/white"
         android:textSize="18sp"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -86,7 +87,7 @@
         android:text="@string/big_title"
         android:textColor="@color/white"
         android:textSize="36sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
         app:layout_constraintBottom_toTopOf="@+id/bt_explore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

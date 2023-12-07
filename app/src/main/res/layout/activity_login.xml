@@ -34,7 +34,7 @@
         android:transitionName="textLogo"
         android:text="@string/logo_name"
         android:textSize="22sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintBottom_toBottomOf="@+id/Imagelogo"
         app:layout_constraintStart_toEndOf="@+id/Imagelogo"
         app:layout_constraintTop_toTopOf="@+id/Imagelogo" />
@@ -48,15 +48,15 @@
 
     <TextView
         android:id="@+id/heading"
-        android:layout_width="200dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="-80dp"
         android:alpha="0"
-        android:text="Welcome Back"
+        android:text="@string/welcome_back"
         android:textColor="@color/primary"
         android:textSize="42sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         tools:alpha="1" />
@@ -65,9 +65,9 @@
         android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:alpha="0"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/email"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/heading"
@@ -99,6 +99,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/user_email"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_regular"
             android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -110,7 +112,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/password"
         android:textSize="16sp"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/poppins_medium"
         android:alpha="0"
         app:layout_constraintStart_toStartOf="@+id/emailTextLayout"
         app:layout_constraintTop_toBottomOf="@+id/emailTextLayout"
@@ -140,6 +142,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/passwordHint"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,11 +151,12 @@
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="70dp"
         android:alpha="0"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/sign_in"
         android:textSize="20sp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/passwordTextLayout"
         app:layout_constraintStart_toStartOf="@+id/passwordTextLayout"
@@ -163,9 +168,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:alpha="0"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/don_t_have_an_account"
-        android:textSize="14dp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
