@@ -46,4 +46,6 @@
     <string name="mountain">Mountain</string>
     <string name="price">Price</string>
     <string name="success">Success</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="create_account">Create Account</string>
 </resources>
