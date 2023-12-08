@@ -15,6 +15,12 @@
         android:theme="@style/Theme.HikeWise"
         tools:targetApi="31">
         <activity
+            android:name=".ui.checkup.QuestionHealthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.checkup.ImageProcessActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.BookingActivity"
             android:exported="false" />
         <activity

@@ -17,11 +17,11 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:elevation="2dp"
-            app:title="User"
-            app:subtitle="Hello there !"
+            app:title="@string/user"
+            app:subtitle="@string/hello_there"
             app:titleTextColor="@color/primary"
-            app:menu="@menu/menu_bar"
-            />
+            app:subtitleTextColor="@color/light_grey"
+            app:menu="@menu/menu_bar" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

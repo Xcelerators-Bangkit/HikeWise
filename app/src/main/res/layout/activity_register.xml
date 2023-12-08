@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/user_email"
-            android:fontFamily="@font/poppins_regular"
+            android:fontFamily="@font/poppins_light"
             android:textSize="14sp"
             android:inputType="textEmailAddress" />
 
@@ -129,7 +129,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/passwordHint"
-            android:fontFamily="@font/poppins_regular"
+            android:fontFamily="@font/poppins_light"
             android:textSize="14sp"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -141,7 +141,7 @@
         android:layout_marginBottom="70dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/sign_up"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/passwordTextLayout"

@@ -17,9 +17,8 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="Check Up"
-            app:titleTextColor="@color/primary"
-            />
+            app:title="@string/check_up"
+            app:titleTextAppearance="@style/MyToolbarTitle" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.card.MaterialCardView
@@ -27,7 +26,7 @@
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/second_primary"
         app:cardCornerRadius="22dp"

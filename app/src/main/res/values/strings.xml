@@ -39,7 +39,7 @@
     <string name="desc_health">Sebelum melakukan pendakian, cek dulu yaa kesehatannya untuk keselamatan selama pendakian. :) Selamat mendaki !</string>
     <string name="next">Next</string>
     <string name="subtitle_welcome">Jadilah pendaki yang bijaksana</string>
-    <string name="big_title">let\'s go hiking with HikeWise</string>
+    <string name="big_title">Let\'s go hiking with HikeWise</string>
     <string name="explore">Explore</string>
     <string name="subtitle_article">Subtitle article</string>
     <string name="address">Address</string>
@@ -48,4 +48,14 @@
     <string name="success">Success</string>
     <string name="welcome_back">Welcome Back</string>
     <string name="create_account">Create Account</string>
+    <string name="quetion_booking">Jadwalkan pendakianmu dari sekarang dan nikmati liburanmu bersama teman-teman.</string>
+    <string name="booking">Booking</string>
+    <string name="check_up">Check Up</string>
+    <string name="day">Day</string>
+    <string name="user">User</string>
+    <string name="hello_there">Hello there !</string>
+    <string name="image">Image Processing</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="question_health">Question Health</string>
 </resources>

@@ -23,8 +23,8 @@
             <com.google.android.material.appbar.MaterialToolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:title="Booking"
-                app:titleTextColor="@color/primary" />
+                app:title="@string/booking"
+                app:titleTextAppearance="@style/MyToolbarTitle" />
         </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -35,9 +35,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:text="Jadwalkan pendakianmu dari sekarang dan nikmati liburanmu bersama teman-teman."
-            android:textSize="32sp"
-            android:textStyle="bold"
+            android:text="@string/quetion_booking"
+            android:textSize="22sp"
+            android:fontFamily="@font/poppins_medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout3" />
@@ -48,7 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/name"
-            android:textSize="20sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/tv_title"
             app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
@@ -74,8 +75,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/name"
-                android:inputType="text" />
+                android:hint="@string/full_name"
+                android:inputType="text"
+                style="@style/MyAutoCompleteTextView"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,7 +87,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="@string/mountain"
-            android:textSize="20sp"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_medium"
             app:layout_constraintStart_toStartOf="@+id/nameTextInputLayout"
             app:layout_constraintTop_toBottomOf="@+id/nameTextInputLayout" />
 
@@ -111,6 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/mountain"
+                style="@style/MyAutoCompleteTextView"
                 android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -121,7 +125,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="@string/date"
-            android:textSize="20sp"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_medium"
             app:layout_constraintStart_toStartOf="@+id/mountain_textInputLayout"
             app:layout_constraintTop_toBottomOf="@+id/mountain_textInputLayout" />
 
@@ -150,7 +155,7 @@
                 android:ems="10"
                 android:hint="@string/date"
                 android:inputType="date"
-
+                style="@style/MyAutoCompleteTextView"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -161,7 +166,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="@string/price"
-            android:textSize="20sp"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_medium"
             app:layout_constraintStart_toStartOf="@+id/date_textInputLayout"
             app:layout_constraintTop_toBottomOf="@+id/date_textInputLayout" />
 
@@ -187,16 +193,18 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/price"
-                android:inputType="number" />
+                android:inputType="number"
+                style="@style/MyAutoCompleteTextView"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="28dp"
             android:text="@string/next"
-            android:textSize="20sp"
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/price_textInputLayout"
             app:layout_constraintHorizontal_bias="0.0"
