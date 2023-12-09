@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/atas"
         android:transitionName="logo"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,6 +21,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/bawah"
         android:transitionName="logo"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
