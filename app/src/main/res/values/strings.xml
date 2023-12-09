@@ -58,4 +58,9 @@
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
     <string name="question_health">Question Health</string>
+    <string name="equipment">Equipment</string>
+    <string name="is_ready">Is Ready</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="back">Back</string>
 </resources>

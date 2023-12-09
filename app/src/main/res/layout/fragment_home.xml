@@ -39,13 +39,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Check Up"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/poppins_medium"
+                android:text="Check Up"
                 android:textColor="@color/white"
                 android:textSize="32sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/icNote"
                 app:layout_constraintStart_toEndOf="@+id/icNote"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/icNote" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -80,7 +81,8 @@
         android:textColor="@color/primary"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_mountain"
@@ -119,7 +121,8 @@
         android:textColor="@color/primary"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_article"

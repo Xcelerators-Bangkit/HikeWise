@@ -21,56 +21,46 @@
             app:titleTextAppearance="@style/MyToolbarTitle" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <RelativeLayout
-        android:id="@+id/image_process"
-        android:layout_width="350dp"
-        android:layout_height="450dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:clipToOutline="true"
-        android:background="@drawable/border2"
+        android:src="@drawable/ic_image"
+        app:layout_constraintBottom_toTopOf="@+id/btnCamera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayoutImage"
-        tools:ignore="MissingConstraints">
-
-        <ImageView
-            android:layout_width="106dp"
-            android:layout_height="106dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="244dp"
-            android:clipToOutline="true"
-            android:src="@drawable/ic_image" />
-
-    </RelativeLayout>
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayoutImage" />
 
     <Button
         android:id="@+id/btnGallery"
         android:layout_width="171dp"
-        android:layout_height="42dp"
+        android:layout_height="48dp"
         android:alpha="0"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/gallery"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/btnCamera"
-        app:layout_constraintEnd_toEndOf="@+id/image_process"
+        app:layout_constraintEnd_toEndOf="@+id/btnProcess"
         tools:alpha="1" />
 
     <Button
         android:id="@+id/btnCamera"
         android:layout_width="171dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="27dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="20dp"
         android:alpha="0"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/camera"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/image_process"
-        app:layout_constraintTop_toBottomOf="@+id/image_process"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnProcess"
+        app:layout_constraintStart_toStartOf="@+id/btnProcess"
         tools:alpha="1" />
 
     <Button
@@ -80,10 +70,10 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="30dp"
-        android:text="@string/process"
         android:fontFamily="@font/poppins_medium"
-        android:textSize="24sp"
+        android:text="@string/process"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
