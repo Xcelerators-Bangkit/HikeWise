@@ -26,9 +26,10 @@ class QuestionHealthActivity : AppCompatActivity() {
         val questionRepository = MyApplication.questionRepository
         viewModel = ViewModelProvider(this, QuestionViewModelFactory(questionRepository))[QuestionViewModel::class.java]
 
-        questionAdapter = QuestionListAdapter { option ->
-            viewModel.saveAnswer(option)
-        }
+//        questionAdapter = QuestionListAdapter { option ->
+//            viewModel.saveAnswer(option)
+//        }
+
 
         val recyclerView = binding.rvQuestion
         recyclerView.layoutManager = LinearLayoutManager(this)

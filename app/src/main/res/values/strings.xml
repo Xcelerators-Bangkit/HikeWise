@@ -67,4 +67,7 @@
     <string name="result_equip">Result Equipment</string>
     <string name="kota">Jakarta</string>
     <string name="cuaca">Cerah</string>
+    <string name="hiking">Hiking</string>
+    <string name="trip">Open Trip</string>
+    <string name="alat">Alat</string>
 </resources>

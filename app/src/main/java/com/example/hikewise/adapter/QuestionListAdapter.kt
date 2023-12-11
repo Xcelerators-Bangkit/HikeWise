@@ -1,5 +1,6 @@
 package com.example.hikewise.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hikewise.R
 import com.example.hikewise.data.question.Option
 import com.example.hikewise.data.question.Question
+import com.example.hikewise.data.question.QuestionRepository
 
 class QuestionListAdapter(
     private val onAnswerSelected: (Option) -> Unit
