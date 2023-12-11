@@ -63,4 +63,8 @@
     <string name="no">No</string>
     <string name="yes">Yes</string>
     <string name="back">Back</string>
+    <string name="result_health">Wah kesehatanmu sudah siap untuk mendaki , jaga kesehatan ya supaya pendakiannya lancar dan selamat.</string>
+    <string name="result_equip">Result Equipment</string>
+    <string name="kota">Jakarta</string>
+    <string name="cuaca">Cerah</string>
 </resources>

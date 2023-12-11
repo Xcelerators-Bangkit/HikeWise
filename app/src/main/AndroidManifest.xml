@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,12 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HikeWise"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".ui.ResultEquipmentActivity"
+            android:name=".ui.weather.ResultWeatherActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ResultQuestionHealthActivity"
+            android:name=".ui.checkup.ResultEquipmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.checkup.ResultQuestionHealthActivity"
             android:exported="false" />
         <activity
             android:name=".ui.checkup.QuestionHealthActivity"
@@ -62,7 +65,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.SplashScreenActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

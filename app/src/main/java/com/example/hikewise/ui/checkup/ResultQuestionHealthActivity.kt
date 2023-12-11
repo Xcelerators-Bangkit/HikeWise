@@ -1,4 +1,4 @@
-package com.example.hikewise.ui
+package com.example.hikewise.ui.checkup
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,7 @@ import com.example.hikewise.MyApplication
 import com.example.hikewise.data.question.QuestionViewModel
 import com.example.hikewise.data.question.QuestionViewModelFactory
 import com.example.hikewise.databinding.ActivityResultQuestionHealthBinding
+import com.example.hikewise.ui.CheckUpActivity
 
 class ResultQuestionHealthActivity : AppCompatActivity() {
 

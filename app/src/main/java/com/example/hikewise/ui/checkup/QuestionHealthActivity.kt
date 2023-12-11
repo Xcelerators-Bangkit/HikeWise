@@ -1,23 +1,17 @@
 package com.example.hikewise.ui.checkup
 
-import android.app.Activity
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hikewise.MyApplication
 import com.example.hikewise.adapter.QuestionListAdapter
-import com.example.hikewise.data.question.Option
-import com.example.hikewise.data.question.QuestionRepository
 import com.example.hikewise.data.question.QuestionViewModel
 import com.example.hikewise.data.question.QuestionViewModelFactory
 
 import com.example.hikewise.databinding.ActivityQuestionHealthBinding
-import com.example.hikewise.ui.ResultQuestionHealthActivity
 
 class QuestionHealthActivity : AppCompatActivity() {
 

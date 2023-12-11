@@ -1,5 +1,6 @@
 package com.example.hikewise.ui.checkup
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.hikewise.R
@@ -15,7 +16,9 @@ class EquipmentActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnNext.setOnClickListener {
-
+            val intent = Intent(this, ImageProcessActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
