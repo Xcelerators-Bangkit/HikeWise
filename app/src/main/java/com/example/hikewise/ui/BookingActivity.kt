@@ -3,8 +3,8 @@ package com.example.hikewise.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.hikewise.R
 import com.example.hikewise.databinding.ActivityBookingBinding
+import com.example.hikewise.ui.bookingopentrip.booking.BookingOpenTripActivity
 
 class BookingActivity : AppCompatActivity() {
 

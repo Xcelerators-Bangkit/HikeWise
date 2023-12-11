@@ -37,11 +37,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="10dp"
             android:fontFamily="@font/poppins_medium"
             android:text="Nama Alat"
             android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/day"
             app:layout_constraintStart_toEndOf="@+id/image_alat"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,9 +54,9 @@
             android:text="@string/day"
             android:textColor="@color/light_grey"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/price"
+            app:layout_constraintBottom_toBottomOf="@+id/nama_alat"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/price" />
+            app:layout_constraintTop_toTopOf="@+id/nama_alat" />
 
         <TextView
             android:id="@+id/price"

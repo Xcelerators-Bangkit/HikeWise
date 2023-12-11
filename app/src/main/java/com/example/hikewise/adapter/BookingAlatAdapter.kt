@@ -1,5 +1,6 @@
 package com.example.hikewise.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -27,12 +28,13 @@ class BookingAlatAdapter :
     class BookingViewHolder(val binding: ItemBookingAlatBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(booking: BookingEntity) {
             // Implement logic to bind data to views in the layout
             binding.namaAlat.text = booking.alat
-            binding.day.text = booking.duration.toString()
+            binding.day.text = "${booking.duration} Day"
             binding.imageAlat.setImageResource(booking.image)
-            binding.price.text = booking.price.toString()
+            binding.price.text = "${booking.price} IDR"
 
             // Add more bindings as needed
         }

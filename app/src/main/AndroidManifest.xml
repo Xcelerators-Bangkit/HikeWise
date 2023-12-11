@@ -22,7 +22,7 @@
             android:name=".ui.AlatCampingActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.BookingOpenTripActivity"
+            android:name=".ui.bookingopentrip.booking.BookingOpenTripActivity"
             android:exported="false" />
         <activity
             android:name=".ui.BookingPendakianActivity"
