@@ -10,7 +10,7 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="290dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,9 +26,9 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/vector_booking"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appBarLayout3"
@@ -44,7 +44,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:backgroundTint="@color/full_transparant"
                     app:title="@string/booking"
-                    app:titleTextColor="@color/white" />
+                    app:titleTextAppearance="@style/MyToolbarTitle2"/>
             </com.google.android.material.appbar.AppBarLayout>
 
             <TextView
@@ -56,7 +56,7 @@
                 android:fontFamily="@font/poppins_medium"
                 android:text="Buat pendakianmu menjadi lebih menyenangkan dengan HikeWIse"
                 android:textColor="@color/white"
-                android:textSize="32sp"
+                android:textSize="28sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/appBarLayout3" />
@@ -75,7 +75,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         app:cardPreventCornerOverlap="false"
-        app:cardCornerRadius="6dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,7 +104,7 @@
                 android:layout_marginEnd="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Booking Hiking Now"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_image_mountain"
                 app:layout_constraintEnd_toStartOf="@+id/imageView7"
                 app:layout_constraintStart_toEndOf="@+id/tv_image_mountain"
@@ -112,8 +112,8 @@
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/baseline_keyboard_arrow_right_24"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_title"
@@ -131,7 +131,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         app:cardPreventCornerOverlap="false"
-        app:cardCornerRadius="6dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -159,7 +159,7 @@
                 android:layout_marginEnd="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Booking Trip Now"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_opentrip"
                 app:layout_constraintEnd_toStartOf="@+id/imageView8"
                 app:layout_constraintStart_toEndOf="@+id/tv_opentrip"
@@ -167,8 +167,8 @@
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/baseline_keyboard_arrow_right_24"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_title_trip"
@@ -186,7 +186,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         app:cardPreventCornerOverlap="false"
-        app:cardCornerRadius="6dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -213,7 +213,7 @@
                 android:layout_marginEnd="10dp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Booking Equipment Now"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_image_booking_alat"
                 app:layout_constraintEnd_toStartOf="@+id/imageView9"
                 app:layout_constraintStart_toEndOf="@+id/tv_image_booking_alat"
@@ -221,8 +221,8 @@
 
             <ImageView
                 android:id="@+id/imageView9"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
                 android:layout_marginEnd="20dp"
                 android:src="@drawable/baseline_keyboard_arrow_right_24"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_image_booking_alat"

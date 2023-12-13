@@ -51,14 +51,13 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="-80dp"
         android:alpha="0"
+        android:fontFamily="@font/poppins_semibold"
         android:text="@string/welcome_back"
         android:textColor="@color/primary"
         android:textSize="42sp"
-        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
         tools:alpha="1" />
 
     <TextView
@@ -152,14 +151,16 @@
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginBottom="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:alpha="0"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/sign_in"
         android:textSize="24sp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/passwordTextLayout"
-        app:layout_constraintStart_toStartOf="@+id/passwordTextLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:alpha="1" />
 
     <TextView
@@ -182,7 +183,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="240dp" />
+        app:layout_constraintGuide_begin="150dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

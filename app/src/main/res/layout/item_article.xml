@@ -5,7 +5,7 @@
     android:layout_height="200dp"
     android:layout_marginEnd="24dp"
     app:cardPreventCornerOverlap="false"
-    app:cardCornerRadius="14dp"
+    app:cardCornerRadius="15dp"
     app:cardElevation="6dp"
     xmlns:tools="http://schemas.android.com/tools"
     >

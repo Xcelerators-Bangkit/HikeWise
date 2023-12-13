@@ -16,7 +16,13 @@
         android:theme="@style/Theme.HikeWise"
         tools:targetApi="31">
         <activity
-            android:name=".ui.fragment.HistoryPendakianOpenTripFragment"
+            android:name=".ui.bookingalat.detailbooking.DetailBookingAlatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.bookingopentrip.detailbooking.DetailOpenTripActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.bookingopentrip.listbooking.HistoryPendakianOpenTripFragment"
             android:exported="false" />
         <activity
             android:name=".ui.AlatCampingActivity"

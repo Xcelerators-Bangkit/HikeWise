@@ -50,6 +50,7 @@
     <string name="create_account">Create Account</string>
     <string name="quetion_booking">Jadwalkan pendakianmu dari sekarang dan nikmati liburanmu bersama teman-teman.</string>
     <string name="booking">Booking</string>
+    <string name="booking_hiking">Booking Hiking</string>
     <string name="check_up">Check Up</string>
     <string name="day">Day</string>
     <string name="user">User</string>
@@ -70,4 +71,15 @@
     <string name="hiking">Hiking</string>
     <string name="trip">Open Trip</string>
     <string name="alat">Alat</string>
+    <string name="alat_camping">Alat Camping</string>
+    <string name="logout">Logout</string>
+    <string name="gender">Gender</string>
+    <string name="save">Save</string>
+    <string name="history_transaction">History Transaction</string>
+    <string name="trip_name">Trip Name</string>
+    <string name="open_trip_name">Open Trip Name</string>
+    <string name="booking_trip">Booking Trip</string>
+    <string name="detail_trip">Detail Trip</string>
+    <string name="delete">Delete</string>
+    <string name="detail_hiking">Detail Hiking</string>
 </resources>

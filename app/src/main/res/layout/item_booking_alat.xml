@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="100dp"
     android:layout_marginBottom="10dp"
     android:layout_marginStart="18dp"
     android:layout_marginEnd="18dp"
@@ -24,7 +24,7 @@
 
         <ImageView
             android:id="@+id/image_alat"
-            android:layout_width="110dp"
+            android:layout_width="90dp"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/tenda"
@@ -36,11 +36,12 @@
             android:id="@+id/nama_alat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
             android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/primary_dark"
             android:text="Nama Alat"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@+id/day"
             app:layout_constraintStart_toEndOf="@+id/image_alat"
             app:layout_constraintTop_toTopOf="parent" />
@@ -66,7 +67,7 @@
             android:fontFamily="@font/poppins_medium"
             android:text="@string/price"
             android:textColor="@color/primary"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/nama_alat"
             app:layout_constraintTop_toBottomOf="@+id/nama_alat" />
 

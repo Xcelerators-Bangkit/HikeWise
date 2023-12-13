@@ -41,7 +41,18 @@
     </style>
 
     <style name="MyAutoCompleteTextView">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="MyToolbarTitle2">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="MyAutoCompleteTextView2">
+        <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 </resources>

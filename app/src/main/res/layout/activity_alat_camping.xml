@@ -17,8 +17,8 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="Alat Camping"
-            app:titleTextColor="@color/primary" />
+            app:title="@string/alat_camping"
+            app:titleTextAppearance="@style/MyToolbarTitle"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
