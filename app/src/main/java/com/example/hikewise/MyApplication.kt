@@ -9,12 +9,11 @@ import com.example.hikewise.data.question.QuestionViewModelFactory
 class MyApplication: Application() {
 
     companion object {
-        lateinit var questionRepository: QuestionRepository
+        lateinit var instance: MyApplication
     }
 
     override fun onCreate() {
         super.onCreate()
-
-        questionRepository = QuestionRepository()
+        instance = this
     }
 }

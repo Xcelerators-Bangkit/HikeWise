@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import com.example.hikewise.MyApplication
+import com.example.hikewise.data.question.QuestionRepository
 import com.example.hikewise.data.question.QuestionViewModel
 import com.example.hikewise.data.question.QuestionViewModelFactory
 import com.example.hikewise.databinding.ActivityResultQuestionHealthBinding
@@ -20,7 +21,7 @@ class ResultQuestionHealthActivity : AppCompatActivity() {
         binding = ActivityResultQuestionHealthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val questionRepository = MyApplication.questionRepository
+        val questionRepository = QuestionRepository.getInstance()
         viewModel = ViewModelProvider(this, QuestionViewModelFactory(questionRepository))[QuestionViewModel::class.java]
 
         viewModel.getResultMessage()

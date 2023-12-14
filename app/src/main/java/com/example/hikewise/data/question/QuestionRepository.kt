@@ -5,6 +5,21 @@ import android.util.Log
 class QuestionRepository {
     private val answersMap = mutableMapOf<Int, String>()
 
+    companion object {
+        @Volatile
+        private var instance: QuestionRepository? = null
+        
+        fun getInstance(): QuestionRepository {
+            return instance ?: synchronized(this) {
+                if (instance == null) {
+                    instance = QuestionRepository()
+                }
+                return instance as QuestionRepository
+            }
+        }
+
+    }
+
     fun getQuestions(): List<Question> {
         return QuestionsList.questions
     }

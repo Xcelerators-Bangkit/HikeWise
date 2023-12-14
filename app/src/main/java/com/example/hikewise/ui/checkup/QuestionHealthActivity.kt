@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hikewise.MyApplication
 import com.example.hikewise.adapter.QuestionListAdapter
+import com.example.hikewise.data.question.QuestionRepository
 import com.example.hikewise.data.question.QuestionViewModel
 import com.example.hikewise.data.question.QuestionViewModelFactory
 
@@ -23,7 +24,7 @@ class QuestionHealthActivity : AppCompatActivity() {
         binding = ActivityQuestionHealthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val questionRepository = MyApplication.questionRepository
+        val questionRepository = QuestionRepository.getInstance()
         viewModel = ViewModelProvider(this, QuestionViewModelFactory(questionRepository))[QuestionViewModel::class.java]
 
         questionAdapter = QuestionListAdapter { option ->

@@ -15,6 +15,9 @@
         <item name="bottomNavigationStyle">@style/BottomNavigationView</item>
     </style>
 
+    <style name="backkgroundHistory">
+        <item name="backgroundTint">@color/primary_dark</item>
+    </style>
 
     <style name="BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
