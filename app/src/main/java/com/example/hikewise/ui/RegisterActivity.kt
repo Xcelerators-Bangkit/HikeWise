@@ -13,22 +13,31 @@ import android.text.TextUtils
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
+import android.util.Log
 import android.view.View
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.ViewModelProvider
 import com.example.hikewise.R
 import com.example.hikewise.databinding.ActivityRegisterBinding
+import com.example.hikewise.model.RegisterViewModel
+import com.example.hikewise.model.ViewModelFactory
+import com.example.hikewise.remote.UserRepository
+import com.example.hikewise.response.RegisterRequest
 import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var auth: FirebaseAuth
+    private lateinit var viewmodel: RegisterViewModel
 
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        viewmodel = ViewModelProvider(this, ViewModelFactory.getInstance(this)).get(RegisterViewModel::class.java)
 
         spanCustom()
 
@@ -48,6 +57,25 @@ class RegisterActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
+                    val nameUser = binding.editTextName.text.toString()
+                    viewmodel.register(RegisterRequest(
+                        email,
+                        nameUser,
+                        password,
+                        "user",
+                        "12973651",
+                        "Man",
+                        "2023-12-15",
+                        "Indonesia",
+                    ))
+                    viewmodel.register.observe(this){ response ->
+                        if (response != null){
+                            Log.d("RegisterActivity", response.message.toString())
+                        } else {
+                            Log.d("RegisterActivity", "null")
+                        }
+
+                    }
                     val dialog = AlertDialog.Builder(this)
                     dialog.setTitle("Register Success")
                     dialog.setMessage("You have successfully registered")
