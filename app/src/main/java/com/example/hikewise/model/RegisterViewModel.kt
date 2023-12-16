@@ -1,5 +1,6 @@
 package com.example.hikewise.model
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -20,7 +21,7 @@ class RegisterViewModel(private val userRepository: UserRepository) : ViewModel(
                 val response = userRepository.register(registerRequest)
                 _register.postValue(response)
             } catch (e: Exception){
-                _register.postValue(null)
+                Log.d("ViewModel", e.message.toString())
             }
         }
 

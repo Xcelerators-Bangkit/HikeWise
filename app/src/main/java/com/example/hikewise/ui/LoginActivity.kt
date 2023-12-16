@@ -13,17 +13,29 @@ import android.text.TextUtils
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
+import android.util.Log
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.ViewModelProvider
 import com.example.hikewise.R
 import com.example.hikewise.databinding.ActivityLoginBinding
+import com.example.hikewise.model.LoginViewModel
+import com.example.hikewise.model.ViewModelFactory
+import com.example.hikewise.pref.user.User
+import com.example.hikewise.pref.user.UserPreference
+import com.example.hikewise.pref.user.dataStore
+import com.example.hikewise.response.LoginResponse
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
+    private lateinit var viewmodel: LoginViewModel
+    private lateinit var userPreference: UserPreference
 
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +45,17 @@ class LoginActivity : AppCompatActivity() {
         animation()
         spanCustom()
 
+        userPreference = UserPreference.getInstance(this.dataStore)
+        viewmodel = ViewModelProvider(this, ViewModelFactory.getInstance(this)).get(LoginViewModel::class.java)
+
         auth = FirebaseAuth.getInstance()
+
+        viewmodel.login.observe(this) {response ->
+            if (response != null) {
+                Log.d("LoginActivity", response.message())
+            }
+
+        }
 
         binding.btnLogin.setOnClickListener {
             val email = binding.emailEditText.text.toString()
@@ -47,6 +69,13 @@ class LoginActivity : AppCompatActivity() {
     private fun login(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
             if (it.isSuccessful) {
+                viewmodel.login(LoginResponse(
+                    email,
+                    password
+                ))
+                GlobalScope.launch {
+                    userPreference.saveUser(User(email))
+                }
                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
                 startActivity(intent)
                 finish()
@@ -61,6 +90,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
 
 
     @RequiresApi(Build.VERSION_CODES.Q)

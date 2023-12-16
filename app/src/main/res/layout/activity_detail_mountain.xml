@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
+            android:transitionName="image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -32,14 +33,17 @@
 
     <TextView
         android:id="@+id/tv_title_mountain"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:layout_marginTop="15dp"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="60dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="@string/mountain_name"
         android:textColor="@color/primary"
         android:textSize="24sp"
+        android:transitionName="title"
+        app:layout_constraintEnd_toStartOf="@+id/tv_count_mountain"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView_mountain" />
 
@@ -55,60 +59,66 @@
         android:textColor="@color/primary"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_title_mountain"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_mountain" />
 
 
     <TextView
         android:id="@+id/tv_location"
-        android:layout_width="230dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
         android:layout_marginStart="15dp"
-        android:text="@string/location"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
         android:fontFamily="@font/poppins_medium"
+        android:text="@string/location"
+        android:textColor="@color/light_grey"
+        android:textSize="14sp"
+        android:transitionName="location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ketinggian" />
+
+    <TextView
+        android:id="@+id/tv_ketinggian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/ketinggian"
         android:textColor="@color/light_grey"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_mountain" />
 
     <TextView
-        android:id="@+id/tv_ketinggian"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="15dp"
-        android:text="@string/ketinggian"
-        android:textColor="@color/light_grey"
-        android:fontFamily="@font/poppins_medium"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
-
-    <TextView
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/status"
         android:fontFamily="@font/poppins_medium"
+        android:text="@string/status"
         android:textColor="@color/light_grey"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_location"
-        app:layout_constraintEnd_toEndOf="@+id/tv_count_mountain" />
+        android:transitionName="status"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_ketinggian"
+        app:layout_constraintEnd_toEndOf="@+id/tv_count_mountain"
+        app:layout_constraintTop_toTopOf="@+id/tv_ketinggian" />
 
     <TextView
         android:id="@+id/tv_desc_mountain"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="15dp"
+        android:fontFamily="@font/poppins_regular"
         android:gravity="start|end"
         android:text="@string/desc_mountain"
         android:textColor="@color/light_grey"
-        android:fontFamily="@font/poppins_regular"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ketinggian" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

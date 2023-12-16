@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="332dp"
+    android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
     android:layout_marginStart="18dp"
     android:layout_marginEnd="18dp"
@@ -16,16 +16,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/materialCardView"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            app:strokeWidth="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="0dp">
 
             <ImageView
                 android:id="@+id/tv_image"
@@ -40,62 +41,45 @@
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/article_name"
-            android:textSize="14sp"
-            android:fontFamily="@font/poppins_semibold"
-            android:textColor="@color/primary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
-
-        <TextView
             android:id="@+id/tv_sumber"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
             android:layout_marginStart="20dp"
-            android:text="@string/sumber"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
             android:fontFamily="@font/poppins_medium"
-            android:textSize="12dp"
+            android:maxLines="1"
+            android:text="@string/sumber"
             android:textColor="@color/cerah_grey"
+            android:textSize="12dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
 
         <TextView
             android:id="@+id/tv_date"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:maxLines="1"
             android:text="@string/date"
+            android:textAlignment="textEnd"
             android:textColor="@color/cerah_grey"
             android:textSize="12dp"
-            android:textAlignment="textEnd"
-            android:fontFamily="@font/poppins_medium"
             app:layout_constraintBottom_toBottomOf="@+id/tv_sumber"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tv_sumber" />
 
         <TextView
             android:id="@+id/tv_desc_article"
-            android:layout_width="335dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="@string/desc_article"
-            android:textSize="12sp"
-            android:gravity="start|end"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/cerah_grey"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
+            android:ellipsize="end"
+            android:maxLines="3"
+            app:layout_constraintEnd_toEndOf="@+id/tv_date"
+            app:layout_constraintStart_toStartOf="@+id/tv_sumber"
             app:layout_constraintTop_toBottomOf="@+id/tv_sumber" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

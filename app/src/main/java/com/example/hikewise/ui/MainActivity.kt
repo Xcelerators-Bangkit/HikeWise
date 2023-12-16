@@ -12,19 +12,26 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.hikewise.R
 import com.example.hikewise.databinding.ActivityMainBinding
+import com.example.hikewise.model.GetUserDetailViewModel
+import com.example.hikewise.model.ViewModelFactory
 import com.example.hikewise.pref.ThemePreference
 import com.example.hikewise.pref.ThemeViewModel
 import com.example.hikewise.pref.ThemeViewModelFactory
 import com.example.hikewise.pref.dataStore
+import com.example.hikewise.pref.user.UserPreference
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var mainViewModel: ThemeViewModel
+    private lateinit var viewModel: GetUserDetailViewModel
+    private lateinit var userPreference: UserPreference
 
     private val iconMap = mapOf(
         R.id.menu_home to Pair(R.drawable.icon_home_line, R.drawable.icon_home_fill),
@@ -38,7 +45,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        userPreference = UserPreference.getInstance(this.dataStore)
+        viewModel = ViewModelProvider(this, ViewModelFactory.getInstance(this)).get(GetUserDetailViewModel::class.java)
         val navView : BottomNavigationView = binding.bottomNavigationView
         val navController = findNavController(R.id.nav_host_fragment)
         navView.setupWithNavController(navController)
@@ -69,6 +77,20 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        GlobalScope.launch {
+            val emailUser = userPreference.getUserEmail.first()
+            if (emailUser != null) {
+                viewModel.getUserDetail(emailUser)
+            }
+        }
+
+        viewModel.userDetail.observe(this) { user ->
+            if (user != null) {
+                binding.toolbar.title = user.data?.name
+            }
+        }
+
 
         val pref = ThemePreference.getInstance(this.dataStore)
         mainViewModel = ViewModelProvider(this, ThemeViewModelFactory(pref))[ThemeViewModel::class.java]
