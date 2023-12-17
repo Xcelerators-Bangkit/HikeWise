@@ -15,12 +15,17 @@ class MachineViewModel(private val machineRepository: MachineRepository) : ViewM
     private val _prediction = MutableLiveData<MachineLearningResponse>()
     val prediction: LiveData<MachineLearningResponse> = _prediction
 
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> get() = _isLoading
+
 
     fun predict(file: MultipartBody.Part) {
         viewModelScope.launch {
+            _isLoading.value = true
             try {
                 val response = machineRepository.predict(file)
                 _prediction.postValue(response)
+                _isLoading.value = false
             } catch (e: Exception) {
                 Log.d("ViewModel", e.message.toString())
             }
