@@ -17,6 +17,8 @@ class ResultEquipmentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultEquipmentBinding
     private lateinit var getViewModel: GetAllEquipmentViewModel
     private lateinit var clearViewModel : DeleteAllEquipmentViewModel
+    private lateinit var adapter: EquipmentAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultEquipmentBinding.inflate(layoutInflater)
@@ -24,6 +26,15 @@ class ResultEquipmentActivity : AppCompatActivity() {
 
         getViewModel = ViewModelProvider(this, EquipmentViewModelFactory.getInstance(this)).get(GetAllEquipmentViewModel::class.java)
         clearViewModel = ViewModelProvider(this, EquipmentViewModelFactory.getInstance(this)).get(DeleteAllEquipmentViewModel::class.java)
+
+        adapter = EquipmentAdapter()
+        binding.rvEquipment.layoutManager = LinearLayoutManager(this)
+        binding.rvEquipment.adapter = adapter
+        binding.rvEquipment.setHasFixedSize(true)
+
+        getViewModel.getAllEquipment().observe(this) { pagingData ->
+            adapter.submitData(lifecycle, pagingData)
+        }
 
         binding.btClear.setOnClickListener {
             clearViewModel.deleteAllEquipment()
@@ -36,14 +47,6 @@ class ResultEquipmentActivity : AppCompatActivity() {
             }
         }
 
-        val adapter = EquipmentAdapter()
-        binding.rvEquipment.layoutManager = LinearLayoutManager(this)
-        binding.rvEquipment.adapter = adapter
-        binding.rvEquipment.setHasFixedSize(true)
-
-        getViewModel.getAllEquipment().observe(this) { data ->
-            adapter.submitData(lifecycle, data)
-        }
 
     }
 
