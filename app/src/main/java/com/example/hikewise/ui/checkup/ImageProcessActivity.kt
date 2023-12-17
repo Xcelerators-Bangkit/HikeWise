@@ -7,6 +7,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
@@ -70,37 +71,44 @@ class ImageProcessActivity : AppCompatActivity() {
                     requestImageFile
                 )
 
+                viewModel.isLoading.observe(this) {isLoading ->
+                    binding.loading.visibility = if (isLoading) View.VISIBLE else View.GONE
+                }
+
 
                 viewModel.predict(imageMultipart)
-                viewModel.prediction.observe(this) { prediction ->
-                    val result = prediction.prediction.toString()
-                    if (prediction != null) {
-                        val dialog = AlertDialog.Builder(this)
-                        dialog.setTitle("Prediction Result")
-                        dialog.setMessage("Hasil prediksinya adalah $result, apakah anda mau menyimpan data equipment ini?")
-                        dialog.setPositiveButton("Lanjut"){ _,_ ->
-                            equipmentVieWModel.insertEquipment(EquipmentEntity(
-                                equipment = result
-                            ))
-                            equipmentVieWModel.insertStatus.observe(this) { status ->
-                                if (status == true) {
-                                    val intent = Intent(this, ResultEquipmentActivity::class.java)
-                                    startActivity(intent)
-                                    finish()
-                                }
-                            }
+
+            }
+
+        }
+
+        viewModel.prediction.observe(this) { prediction ->
+            val result = prediction.prediction.toString()
+            if (prediction != null) {
+                val dialog = AlertDialog.Builder(this)
+                dialog.setTitle("Prediction Result")
+                dialog.setMessage("Hasil prediksinya adalah $result, apakah anda mau menyimpan data equipment ini?")
+                dialog.setPositiveButton("Lanjut"){ _,_ ->
+                    equipmentVieWModel.insertEquipment(EquipmentEntity(
+                        equipment = result
+                    ))
+                    equipmentVieWModel.insertStatus.observe(this) { status ->
+                        if (status == true) {
+                            val intent = Intent(this, ResultEquipmentActivity::class.java)
+                            startActivity(intent)
+                            finish()
                         }
-                        dialog.setNegativeButton("Batal"){ _,_ ->
-
-
-                        }
-                        val dialogView = dialog.create()
-                        dialogView.show()
-
-                    } else {
-                        Log.d("Prediction", "Prediction is null")
                     }
                 }
+                dialog.setNegativeButton("Batal"){ _,_ ->
+
+
+                }
+                val dialogView = dialog.create()
+                dialogView.show()
+
+            } else {
+                Log.d("Prediction", "Prediction is null")
             }
         }
 
