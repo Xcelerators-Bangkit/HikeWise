@@ -82,4 +82,18 @@
     <string name="detail_trip">Detail Trip</string>
     <string name="delete">Delete</string>
     <string name="detail_hiking">Detail Hiking</string>
+    <string name="note">Note :\nCapture peralatan pendakianmu dan cek seberapa lengkap peralatan pendakianmu yang sudah siap, alat-alat yang bisa kamu cek yaitu :\n
+- Air Mineral\n
+- Alat penerangan\n
+- Jaket\n
+- Jas Hujan\n
+- Kompas\n
+- Matras\n
+- P3K\n
+- Sepatu\n
+- Sleeping Bag\n
+- Tas\n
+- Tenda\n
+- Trash Bag\n
+</string>
 </resources>
