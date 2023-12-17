@@ -13,7 +13,7 @@ interface EquipmentDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertEquipment(equipment: EquipmentEntity): Long
 
-    @Query("SELECT * FROM equipment")
+    @Query("SELECT * FROM equipment ORDER BY id DESC")
     fun getAllEquipment(): PagingSource<Int, EquipmentEntity>
 
     @Query("DELETE FROM equipment")
