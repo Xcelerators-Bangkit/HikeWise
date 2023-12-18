@@ -1,7 +1,6 @@
 package com.example.hikewise.ui
 
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.Intent
 import android.graphics.fonts.FontStyle
 import android.os.Build
@@ -21,7 +20,6 @@ import com.example.hikewise.R
 import com.example.hikewise.databinding.ActivityRegisterBinding
 import com.example.hikewise.model.RegisterViewModel
 import com.example.hikewise.model.ViewModelFactory
-import com.example.hikewise.remote.UserRepository
 import com.example.hikewise.response.RegisterRequest
 import com.google.firebase.auth.FirebaseAuth
 

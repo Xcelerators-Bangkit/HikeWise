@@ -20,6 +20,6 @@ interface AlatDao {
     @Query("SELECT * FROM booking WHERE id = :id")
     fun getBookingById(id: Int): LiveData<BookingEntity>
 
-    @Delete
-    suspend fun deleteBooking(booking: BookingEntity)
+    @Query("DELETE FROM booking WHERE id = :id")
+    suspend fun deleteBookingID(id: Long)
 }

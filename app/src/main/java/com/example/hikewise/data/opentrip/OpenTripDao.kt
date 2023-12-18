@@ -20,6 +20,6 @@ interface OpenTripDao {
     @Query("SELECT * FROM opentrip WHERE id = :id")
     fun getOpenTripById(id: Int): LiveData<OpenTripEntity>
 
-    @Delete
-    suspend fun deleteOpenTrip(openTrip: OpenTripEntity)
+    @Query("DELETE FROM opentrip WHERE id = :id")
+    suspend fun deleteOpenTripID(id: Long)
 }

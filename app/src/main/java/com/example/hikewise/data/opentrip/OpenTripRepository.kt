@@ -46,7 +46,7 @@ class OpenTripRepository(private val openTripDao: OpenTripDao) {
         return openTripDao.getOpenTripById(id)
     }
 
-    suspend fun deleteOpenTrip(openTrip: OpenTripEntity) {
-        openTripDao.deleteOpenTrip(openTrip)
+    suspend fun deleteOpenTripById(id: Long) {
+        openTripDao.deleteOpenTripID(id)
     }
 }

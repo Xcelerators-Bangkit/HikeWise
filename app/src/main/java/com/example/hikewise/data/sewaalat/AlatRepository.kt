@@ -51,8 +51,8 @@ class AlatRepository(private val alatDao: AlatDao) {
         return alatDao.getBookingById(id)
     }
 
-    suspend fun deleteBooking(booking: BookingEntity) {
-        alatDao.deleteBooking(booking)
+    suspend fun deleteBookingById(id: Long) {
+        alatDao.deleteBookingID(id)
     }
 
 

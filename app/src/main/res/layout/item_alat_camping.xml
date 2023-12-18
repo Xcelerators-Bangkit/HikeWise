@@ -35,7 +35,7 @@
             android:layout_marginEnd="10dp"
             android:text="Title"
             android:textSize="16sp"
-            android:fontFamily="@font/poppins_medium"
+            android:fontFamily="@font/poppins_semibold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_image_alat" />
@@ -44,11 +44,12 @@
             android:id="@+id/tv_price_alat"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
             android:text="Price"
             android:textColor="@color/primary"
             android:textSize="12sp"
-            android:fontFamily="@font/poppins_regular"
             app:layout_constraintEnd_toEndOf="@+id/tv_title_alat"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/tv_title_alat"
             app:layout_constraintTop_toBottomOf="@+id/tv_title_alat" />
 

@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.hikewise.R
 import com.example.hikewise.adapter.AllArticleAdapter
 import com.example.hikewise.databinding.ActivityAllArticleBinding
-import com.example.hikewise.databinding.ItemAllArticleBinding
 import com.example.hikewise.model.GetAllArticleViewModel
 import com.example.hikewise.model.ViewModelFactory
 

@@ -1,7 +1,6 @@
 package com.example.hikewise.ui
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
@@ -20,8 +19,6 @@ import com.example.hikewise.pref.ThemeViewModelFactory
 import com.example.hikewise.pref.dataStore
 import com.example.hikewise.pref.user.UserPreference
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch

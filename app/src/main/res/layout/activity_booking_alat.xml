@@ -21,9 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/poppins_medium"
+        android:fontFamily="@font/poppins_semibold"
         android:text="Title Alat"
-        android:textSize="20sp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_sewa_alat" />
 
@@ -32,8 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/poppins_regular"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/name"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,10 +44,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
-        android:fontFamily="@font/poppins_medium"
+        android:fontFamily="@font/poppins_semibold"
         android:text="@string/price"
         android:textColor="@color/primary"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/name_alat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/name_alat" />
@@ -68,8 +68,9 @@
             android:id="@+id/editTextPersonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama"
-            android:inputType="text" />
+            android:hint="@string/full_name"
+            android:inputType="text"
+            style="@style/MyAutoCompleteTextView"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/poppins_regular"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/day"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout"
@@ -97,8 +98,9 @@
             android:id="@+id/editTextDay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Day"
-            android:inputType="text" />
+            android:hint="@string/day"
+            android:inputType="text"
+            style="@style/MyAutoCompleteTextView"/>
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -111,7 +113,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
         android:text="Booking"
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_medium"
         app:layout_constraintBottom_toBottomOf="parent"

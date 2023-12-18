@@ -6,22 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.profile.ProfileFragment">
 
-    <ImageView
-        android:id="@+id/iv_profile"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="35dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTextLayout"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:alpha="0"
         android:layout_marginTop="10dp"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
@@ -31,8 +22,7 @@
         app:layout_constraintEnd_toEndOf="@id/nameTextInputLayout"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/nameTextInputLayout"
-        app:layout_constraintTop_toBottomOf="@id/nameTextInputLayout"
-        tools:alpha="1">
+        app:layout_constraintTop_toBottomOf="@id/nameTextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailEditText"
@@ -51,7 +41,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:alpha="0"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
@@ -60,8 +49,7 @@
         app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="@+id/emailTextLayout"
         app:layout_constraintStart_toStartOf="@+id/emailTextLayout"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextLayout"
-        tools:alpha="1">
+        app:layout_constraintTop_toBottomOf="@+id/emailTextLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordEditText"
@@ -117,7 +105,7 @@
         tools:alpha="1">
 
         <AutoCompleteTextView
-            android:id="@+id/mountain_autoCompleteTextView"
+            android:id="@+id/genderEditText"
             style="@style/MyAutoCompleteTextView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -133,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="70dp"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
@@ -141,7 +129,7 @@
         app:boxStrokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_profile">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nameEditText"
@@ -179,19 +167,16 @@
             android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
-    
-    <Button
+
+    <ImageButton
         android:id="@+id/btLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/primary"
-        android:text="@string/logout"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/iv_profile"
-        app:layout_constraintTop_toTopOf="@+id/iv_profile" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/logout"
+        android:src="@drawable/ic_logout"
+        android:background="@color/second_primary"/>
 
     <Button
         android:id="@+id/btSave"

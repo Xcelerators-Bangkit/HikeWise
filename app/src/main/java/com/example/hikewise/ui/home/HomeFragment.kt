@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.hikewise.R
 import com.example.hikewise.adapter.ArticleAdapter
 import com.example.hikewise.adapter.MountainAdapter
 import com.example.hikewise.databinding.FragmentHomeBinding
@@ -18,8 +17,6 @@ import com.example.hikewise.model.ViewModelFactory
 import com.example.hikewise.ui.AllArticleActivity
 import com.example.hikewise.ui.BookingActivity
 import com.example.hikewise.ui.CheckUpActivity
-import com.example.hikewise.ui.DetailArticleActivity
-import com.example.hikewise.ui.DetailMountainActivity
 import com.example.hikewise.ui.SearchMountainActivity
 
 

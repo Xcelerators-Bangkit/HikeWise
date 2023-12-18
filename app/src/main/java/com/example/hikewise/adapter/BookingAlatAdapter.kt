@@ -1,6 +1,7 @@
 package com.example.hikewise.adapter
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -8,6 +9,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hikewise.data.sewaalat.BookingEntity
 import com.example.hikewise.databinding.ItemBookingAlatBinding
+import com.example.hikewise.ui.bookingalat.detailbooking.DetailBookingAlatActivity
+import com.example.hikewise.ui.bookingopentrip.detailbooking.DetailOpenTripActivity
 
 class BookingAlatAdapter :
     PagingDataAdapter<BookingEntity, BookingAlatAdapter.BookingViewHolder>(DIFF_CALLBACK) {
@@ -37,6 +40,11 @@ class BookingAlatAdapter :
             binding.price.text = "${booking.price} IDR"
 
             // Add more bindings as needed
+            itemView.setOnClickListener {
+                val detailIntent = Intent(itemView.context, DetailBookingAlatActivity::class.java)
+                detailIntent.putExtra("booking", booking)
+                itemView.context.startActivity(detailIntent)
+            }
         }
     }
 

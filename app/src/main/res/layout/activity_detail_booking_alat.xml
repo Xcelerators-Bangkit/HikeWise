@@ -7,100 +7,147 @@
     tools:context=".ui.bookingalat.detailbooking.DetailBookingAlatActivity">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayoutDetailTrip"
+        android:id="@+id/appBarLayoutDetailAlat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/second_primary">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="@string/detail_hiking"
+            app:title="@string/detail_alat"
             app:titleTextAppearance="@style/MyToolbarTitle"/>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutFullName"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_equipment"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayoutDetailTrip">
+        app:layout_constraintTop_toBottomOf="@id/appBarLayoutDetailAlat"
+        app:cardCornerRadius="5dp">
+        <TextView
+            android:id="@+id/edtEquipment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="16sp"
+            android:gravity="start|center_vertical"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/primary"/>
+    </androidx.cardview.widget.CardView>
 
-        <com.google.android.material.textfield.TextInputEditText
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_name"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@id/card_equipment"
+        app:layout_constraintStart_toStartOf="@id/card_equipment"
+        app:layout_constraintTop_toBottomOf="@id/card_equipment"
+        app:cardCornerRadius="5dp">
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="Name :"
+            android:textSize="16sp"
+            android:gravity="start|center_vertical"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/primary"/>
+        <TextView
             android:id="@+id/edtName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/full_name"
-            android:inputType="text"
-            style="@style/MyAutoCompleteTextView"/>
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="16sp"
+            android:gravity="start|center_vertical"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/primary"/>
+    </androidx.cardview.widget.CardView>
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutOpenTrip"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_day"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutFullName"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayoutFullName"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFullName">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtOpenTripName"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@id/card_name"
+        app:layout_constraintStart_toStartOf="@id/card_name"
+        app:layout_constraintTop_toBottomOf="@id/card_name"
+        app:cardCornerRadius="5dp">
+        <TextView
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="Day :"
+            android:gravity="start|center_vertical"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/primary"/>
+        <TextView
+            android:id="@+id/edtDay"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/date"
-            android:inputType="text"
-            style="@style/MyAutoCompleteTextView"/>
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="16sp"
+            android:gravity="start|center_vertical"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/primary"/>
+    </androidx.cardview.widget.CardView>
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutMountainName"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_price"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutOpenTrip"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayoutOpenTrip"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutOpenTrip">
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtMountainName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/mountain_name"
-            android:inputType="text"
-            style="@style/MyAutoCompleteTextView"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutPrince"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutMountainName"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayoutMountainName"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutMountainName">
-
-
-        <com.google.android.material.textfield.TextInputEditText
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@id/card_day"
+        app:layout_constraintStart_toStartOf="@id/card_day"
+        app:layout_constraintTop_toBottomOf="@id/card_day"
+        app:cardCornerRadius="5dp">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="Price : Rp."
+            android:textSize="16sp"
+            android:gravity="start|center_vertical"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/primary"/>
+        <TextView
             android:id="@+id/edtPrice"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/price"
-            android:inputType="text"
-            style="@style/MyAutoCompleteTextView"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="16sp"
+            android:gravity="start|center_vertical"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/primary"/>
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/btnDelete"

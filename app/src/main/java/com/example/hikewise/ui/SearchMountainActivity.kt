@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.hikewise.R
 import com.example.hikewise.adapter.AllMountainAdapter
 import com.example.hikewise.databinding.ActivitySearchMountainBinding
 import com.example.hikewise.model.GetAllMountainViewModel

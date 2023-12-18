@@ -26,9 +26,9 @@ class DetailOpenTripViewModel(private val openTripRepository: OpenTripRepository
         _openTripId.value = openTripId
     }
 
-    fun deleteOpenTrip() {
+    fun deleteOpenTripById(id: Long) {
         viewModelScope.launch {
-            _openTrip.value?.let { openTripRepository.deleteOpenTrip(it) }
+             openTripRepository.deleteOpenTripById(id)
         }
     }
 }
