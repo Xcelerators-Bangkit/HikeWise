@@ -30,7 +30,6 @@
         android:layout_marginEnd="20dp"
         android:text="Ayo mulai open trip untuk mendapatkan pengalaman yang lebih"
         android:textSize="22sp"
-        android:textColor="@color/primary_dark"
         android:fontFamily="@font/poppins_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -170,7 +169,7 @@
         android:fontFamily="@font/poppins_medium"
         android:text="@string/booking"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

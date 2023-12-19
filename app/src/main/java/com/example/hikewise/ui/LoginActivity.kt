@@ -74,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
                     password
                 ))
                 GlobalScope.launch {
-                    userPreference.saveUser(User(email))
+                    userPreference.saveUser(User(email, password))
                 }
                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
                 startActivity(intent)

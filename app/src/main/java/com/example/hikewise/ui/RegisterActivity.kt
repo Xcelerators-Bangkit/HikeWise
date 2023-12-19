@@ -61,10 +61,10 @@ class RegisterActivity : AppCompatActivity() {
                         nameUser,
                         password,
                         "user",
-                        "12973651",
-                        "Man",
+                        "none",
+                        "none",
                         "2023-12-15",
-                        "Indonesia",
+                        "none",
                     ))
                     viewmodel.register.observe(this){ response ->
                         if (response != null){

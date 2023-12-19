@@ -29,7 +29,6 @@ class ResultQuestionHealthActivity : AppCompatActivity() {
             Log.d("ResultQuestionHealthActivity", "Message: $message")
             binding.tvTitle.text = message
 
-            questionRepository.resetAnswers()
         }
 
         binding.btBack.setOnClickListener {

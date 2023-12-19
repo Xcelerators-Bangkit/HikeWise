@@ -156,7 +156,7 @@
         android:alpha="0"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/sign_in"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

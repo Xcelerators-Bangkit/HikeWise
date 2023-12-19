@@ -11,6 +11,12 @@ import android.view.View
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageCapture
+import androidx.camera.core.ImageCaptureException
+import androidx.camera.core.Preview
+import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.example.hikewise.R
 import com.example.hikewise.data.equipment.EquipmentEntity
@@ -26,6 +32,7 @@ import com.example.hikewise.utils.uriToFile
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
+import java.io.File
 
 class ImageProcessActivity : AppCompatActivity() {
 
@@ -34,6 +41,8 @@ class ImageProcessActivity : AppCompatActivity() {
     private lateinit var equipmentVieWModel : InsertViewModel
 
     private var currentImageUri: Uri? = null
+
+    private var imageCapture: ImageCapture? = null
 
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +54,7 @@ class ImageProcessActivity : AppCompatActivity() {
         equipmentVieWModel = ViewModelProvider(this, EquipmentViewModelFactory.getInstance(this)).get(InsertViewModel::class.java)
 
         binding.btCamera.setOnClickListener {
-            openCamera()
+            startCamera()
         }
 
         binding.btGallery.setOnClickListener {
@@ -116,24 +125,26 @@ class ImageProcessActivity : AppCompatActivity() {
 
     }
 
-    private fun openCamera() {
+
+
+    private fun startCamera(){
         currentImageUri = getImageUri(this)
         launchCamera.launch(currentImageUri)
     }
 
     private val launchCamera = registerForActivityResult(
         ActivityResultContracts.TakePicture()
-    ) {isSuccess ->
-        if (isSuccess) {
+    ){ isSucces ->
+        if (isSucces){
             showImage()
         }
     }
 
     private fun startGallery() {
-        launchGallery.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+        launcherGallery.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
     }
 
-    private val launchGallery = registerForActivityResult(
+    private val launcherGallery = registerForActivityResult(
         ActivityResultContracts.PickVisualMedia()
     ) { uri: Uri? ->
         if (uri != null) {
@@ -142,12 +153,11 @@ class ImageProcessActivity : AppCompatActivity() {
         } else {
             Log.d("Photo Picker", "No media selected")
         }
-
     }
-
 
     private fun showImage() {
         currentImageUri?.let {
+            Log.d("Image URI", "showImage: $it")
             binding.tvImagePredict.setImageURI(it)
         }
     }

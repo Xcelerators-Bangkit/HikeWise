@@ -8,6 +8,8 @@ import com.example.hikewise.databinding.ActivityCheckUpBinding
 import com.example.hikewise.databinding.ActivityLoginBinding
 import com.example.hikewise.ui.checkup.EquipmentActivity
 import com.example.hikewise.ui.checkup.HealthActivity
+import com.example.hikewise.ui.checkup.ImageProcessActivity
+import com.example.hikewise.ui.checkup.QuestionHealthActivity
 
 class CheckUpActivity : AppCompatActivity() {
 
@@ -17,14 +19,30 @@ class CheckUpActivity : AppCompatActivity() {
         binding = ActivityCheckUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.alertHealth.setOnClickListener {
+            binding.alertHealth.visibility = android.view.View.GONE
+        }
+
+        binding.alertCheckequipment.setOnClickListener {
+            binding.alertCheckequipment.visibility = android.view.View.GONE
+        }
+
         binding.cardEquipment.setOnClickListener{
-            val intent = Intent(this, EquipmentActivity::class.java)
-            startActivity(intent)
+            binding.alertCheckequipment.visibility = android.view.View.VISIBLE
+            binding.btNextEquipment.setOnClickListener {
+                val intent = Intent(this, ImageProcessActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
 
         binding.cardHealth.setOnClickListener{
-            val intent = Intent(this, HealthActivity::class.java)
-            startActivity(intent)
+            binding.alertHealth.visibility = android.view.View.VISIBLE
+            binding.btNextHealth.setOnClickListener {
+                val intent = Intent(this, QuestionHealthActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
     }
 }

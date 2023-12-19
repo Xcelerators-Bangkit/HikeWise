@@ -8,8 +8,10 @@ import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.example.hikewise.data.opentrip.OpenTripEntity
 import com.example.hikewise.databinding.ActivityDetailOpenTripBinding
+import com.example.hikewise.ui.MainActivity
 import com.example.hikewise.ui.bookingopentrip.BookingOpenTripViewModelFactory
 import com.example.hikewise.ui.bookingopentrip.listbooking.HistoryPendakianOpenTripFragment
+import com.example.hikewise.ui.fragment.HistoryPendakianFragment
 
 class DetailOpenTripActivity : AppCompatActivity() {
 
@@ -40,7 +42,7 @@ class DetailOpenTripActivity : AppCompatActivity() {
 
         binding.btnDelete.setOnClickListener {
             openTripId?.let { it1 -> viewModel.deleteOpenTripById(it1.id) }
-            val intent = Intent(this, HistoryPendakianOpenTripFragment::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }

@@ -26,6 +26,18 @@ class ViewModelFactory(private val repository: UserRepository) : ViewModelProvid
             modelClass.isAssignableFrom(GetAllArticleViewModel::class.java) -> {
                 GetAllArticleViewModel(repository) as T
             }
+            modelClass.isAssignableFrom(UpdateUserViewModel::class.java) -> {
+                UpdateUserViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(TransactionViewModel::class.java) -> {
+                TransactionViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(GetTransactionViewModel::class.java) -> {
+                GetTransactionViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(GetTransactionByEmailViewModel::class.java) -> {
+                GetTransactionByEmailViewModel(repository) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class")
         }
     }

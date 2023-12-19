@@ -59,6 +59,7 @@ dependencies {
 //    DATABASE
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
+    implementation("androidx.camera:camera-lifecycle:1.3.1")
     kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-paging:2.6.1")
     implementation("androidx.paging:paging-runtime-ktx:3.2.1")
@@ -92,6 +93,10 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth-ktx:22.2.0")
+    implementation("com.google.firebase:firebase-storage-ktx:20.3.0")
+
+    
+
 }
 
 

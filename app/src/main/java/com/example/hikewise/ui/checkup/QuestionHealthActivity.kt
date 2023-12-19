@@ -27,6 +27,8 @@ class QuestionHealthActivity : AppCompatActivity() {
         val questionRepository = QuestionRepository.getInstance()
         viewModel = ViewModelProvider(this, QuestionViewModelFactory(questionRepository))[QuestionViewModel::class.java]
 
+
+
         questionAdapter = QuestionListAdapter { option ->
             viewModel.saveAnswer(option)
         }
@@ -34,6 +36,7 @@ class QuestionHealthActivity : AppCompatActivity() {
         val recyclerView = binding.rvQuestion
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = questionAdapter
+
 
         viewModel.loadQuestions()
         viewModel.questionsLiveData.observe(this) { questions ->
@@ -51,6 +54,9 @@ class QuestionHealthActivity : AppCompatActivity() {
         }
 
         binding.btProsess.setOnClickListener {
+
+
+
             val intent = Intent(this, ResultQuestionHealthActivity::class.java)
             startActivity(intent)
             finish()

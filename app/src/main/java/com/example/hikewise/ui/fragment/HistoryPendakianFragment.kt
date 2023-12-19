@@ -1,60 +1,62 @@
 package com.example.hikewise.ui.fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hikewise.R
+import com.example.hikewise.adapter.BookingPendakianAdapter
+import com.example.hikewise.databinding.FragmentHistoryPendakianBinding
+import com.example.hikewise.model.GetTransactionByEmailViewModel
+import com.example.hikewise.model.ViewModelFactory
+import com.example.hikewise.pref.user.UserPreference
+import com.example.hikewise.pref.user.dataStore
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HistoryPendakianFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class HistoryPendakianFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentHistoryPendakianBinding
+    private lateinit var viewModel: GetTransactionByEmailViewModel
+    private lateinit var userPreference: UserPreference
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history_pendakian, container, false)
+    ): View {
+        binding = FragmentHistoryPendakianBinding.inflate(layoutInflater)
+
+        userPreference = UserPreference.getInstance(requireContext().dataStore)
+        viewModel = ViewModelProvider(this, ViewModelFactory.getInstance(requireContext())).get(GetTransactionByEmailViewModel::class.java)
+
+        val adapter = BookingPendakianAdapter()
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.setHasFixedSize(true)
+
+        GlobalScope.launch {
+            val emailUser = userPreference.getUserEmail.first()
+
+            viewModel.getTransactionByEmail(
+                emailUser ?: ""
+            )
+        }
+
+        viewModel.getTransactionByEmail.observe(viewLifecycleOwner) { response->
+            if (response != null){
+                adapter.submitList(response)
+            }
+        }
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HistoryPendakianFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HistoryPendakianFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

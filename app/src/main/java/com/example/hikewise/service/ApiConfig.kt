@@ -12,7 +12,7 @@ class ApiConfig {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
             val client = OkHttpClient.Builder().addInterceptor(loggingInterceptor).build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://xcelerators-backend-d2mhxwtmqa-et.a.run.app/")
+                .baseUrl("https://xcelerators-backend-d2mhxwtmqa-de.a.run.app/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

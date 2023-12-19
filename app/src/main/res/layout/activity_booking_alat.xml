@@ -47,7 +47,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/price"
         android:textColor="@color/primary"
-        android:textSize="20sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/name_alat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/name_alat" />
@@ -113,7 +113,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
         android:text="Booking"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_medium"
         app:layout_constraintBottom_toBottomOf="parent"

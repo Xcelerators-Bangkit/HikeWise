@@ -1,5 +1,6 @@
 package com.example.hikewise.data.question
 
+import android.content.Context
 import android.util.Log
 
 class QuestionRepository {
@@ -8,17 +9,28 @@ class QuestionRepository {
     companion object {
         @Volatile
         private var instance: QuestionRepository? = null
-        
+
         fun getInstance(): QuestionRepository {
             return instance ?: synchronized(this) {
-                if (instance == null) {
-                    instance = QuestionRepository()
-                }
-                return instance as QuestionRepository
+                instance ?: QuestionRepository().also { instance = it }
             }
         }
-
     }
+
+//    companion object {
+//        @Volatile
+//        private var instance: QuestionRepository? = null
+//
+//        fun getInstance(): QuestionRepository {
+//            return instance ?: synchronized(this) {
+//                if (instance == null) {
+//                    instance = QuestionRepository()
+//                }
+//                return instance as QuestionRepository
+//            }
+//        }
+//
+//    }
 
     fun getQuestions(): List<Question> {
         return QuestionsList.questions

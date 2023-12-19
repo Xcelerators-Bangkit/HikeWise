@@ -30,7 +30,7 @@ class BookingAlatActivity : AppCompatActivity() {
         // Misalnya, menampilkan informasi alatCamping di tampilan
         binding.imageSewaAlat.setImageResource(alatCamping.image)
         binding.nameAlat.text = alatCamping.name
-        binding.priceSewaAlat.text = "Price: ${alatCamping.price} IDR"
+        binding.priceSewaAlat.text = "${alatCamping.price} IDR"
 
         binding.btSewaAlat.setOnClickListener {
             val name = binding.editTextPersonName.text.toString()

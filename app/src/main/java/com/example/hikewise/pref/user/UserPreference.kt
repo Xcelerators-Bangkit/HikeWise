@@ -16,6 +16,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
     suspend fun saveUser(user: User){
         dataStore.edit { preferences ->
             preferences[USER_KEY] = user.email
+            preferences[USER_PW] = user.password
             Log.d("UserPreference", user.email)
         }
     }
@@ -24,11 +25,16 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         preferences[USER_KEY]
     }
 
+    val getUserPassword: Flow<String?> = dataStore.data.map { preferences ->
+        preferences[USER_PW]
+    }
+
 
     companion object {
         @Volatile
         private var INSTANCE: UserPreference? = null
         private val USER_KEY = stringPreferencesKey("user_email")
+        private val USER_PW =  stringPreferencesKey("password")
 
         fun getInstance(dataStore: DataStore<Preferences>): UserPreference{
             return INSTANCE ?: synchronized(this) {
