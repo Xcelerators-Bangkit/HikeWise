@@ -22,143 +22,125 @@
             app:titleTextAppearance="@style/MyToolbarTitle"/>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_name"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayoutDetailTrip"
-        app:cardCornerRadius="5dp">
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="5dp"
-            android:text="Name :"
-            android:textSize="16sp"
-            android:gravity="start|center_vertical"
-            android:fontFamily="@font/poppins_medium"
-            android:textColor="@color/primary"/>
-        <TextView
-            android:id="@id/edtName"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginStart="75dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="16sp"
-            android:gravity="start|center_vertical"
-            android:fontFamily="@font/poppins_regular"
-            />
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayoutDetailTrip"
+        app:strokeColor="@color/primary">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_openTrip"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toEndOf="@id/card_name"
-        app:layout_constraintStart_toStartOf="@id/card_name"
-        app:layout_constraintTop_toBottomOf="@id/card_name"
-        app:cardCornerRadius="5dp">
-        <TextView
-            android:layout_width="90dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="5dp"
-            android:text="Open Trip :"
-            android:textSize="16sp"
-            android:gravity="start|center_vertical"
-            android:fontFamily="@font/poppins_medium"
-            android:textColor="@color/primary"/>
-        <TextView
-            android:id="@+id/edtOpenTripName"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginStart="105dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="16sp"
-            android:gravity="start|center_vertical"
-            android:fontFamily="@font/poppins_regular"
-            />
-    </androidx.cardview.widget.CardView>
+            android:layout_height="match_parent">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_mountainName"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toEndOf="@id/card_openTrip"
-        app:layout_constraintStart_toStartOf="@id/card_openTrip"
-        app:layout_constraintTop_toBottomOf="@id/card_openTrip"
-        app:cardCornerRadius="5dp">
-        <TextView
-            android:layout_width="85dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="5dp"
-            android:text="Mountain :"
-            android:gravity="start|center_vertical"
-            android:textSize="16sp"
-            android:fontFamily="@font/poppins_medium"
-            android:textColor="@color/primary"/>
-        <TextView
-            android:id="@+id/edtMountainName"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginStart="102dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="16sp"
-            android:gravity="start|center_vertical"
-            android:fontFamily="@font/poppins_regular"
-            />
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_price"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toEndOf="@id/card_mountainName"
-        app:layout_constraintStart_toStartOf="@id/card_mountainName"
-        app:layout_constraintTop_toBottomOf="@id/card_mountainName"
-        app:cardCornerRadius="5dp">
-        <TextView
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="5dp"
-            android:text="Price : Rp."
-            android:textSize="16sp"
-            android:gravity="start|center_vertical"
-            android:fontFamily="@font/poppins_semibold"
-            android:textColor="@color/primary"/>
-        <TextView
-            android:id="@+id/edtPrice"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginStart="90dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="16sp"
-            android:gravity="start|center_vertical"
-            android:fontFamily="@font/poppins_semibold"
-            />
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/name"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/name_user_openTrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/full_name"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="OpenTerip"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textView18"
+                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+            <TextView
+                android:id="@+id/OpenTripName"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/open_trip_name"
+                android:textSize="14sp"
+                android:textAlignment="textEnd"
+                app:layout_constraintBottom_toBottomOf="@+id/textView22"
+                app:layout_constraintEnd_toEndOf="@+id/name_user_openTrip"
+                app:layout_constraintTop_toTopOf="@+id/textView22" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/mountain"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textView22"
+                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+            <TextView
+                android:id="@+id/mountainNameOpenTrip"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/mountain_name"
+                android:textSize="14sp"
+                android:textAlignment="textEnd"
+                app:layout_constraintBottom_toBottomOf="@+id/textView24"
+                app:layout_constraintEnd_toEndOf="@+id/OpenTripName"
+                app:layout_constraintTop_toTopOf="@+id/textView24" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/price"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textView24"
+                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+            <TextView
+                android:id="@+id/price_booking_openTrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/price"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/mountainNameOpenTrip"
+                app:layout_constraintTop_toTopOf="@+id/textView25" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
 
     <Button
         android:id="@+id/btnDelete"

@@ -27,10 +27,10 @@ class DetailOpenTripActivity : AppCompatActivity() {
 
         val openTripId = intent.getParcelableExtra<OpenTripEntity>("detailOpenTrip")
 
-        val name: TextView = binding.edtName
-        val price: TextView = binding.edtPrice
-        val openTripName: TextView = binding.edtOpenTripName
-        val mountainName: TextView = binding.edtMountainName
+        val name: TextView = binding.nameUserOpenTrip
+        val price: TextView = binding.priceBookingOpenTrip
+        val openTripName: TextView = binding.OpenTripName
+        val mountainName: TextView = binding.mountainNameOpenTrip
 
         if (openTripId != null) {
             name.text = openTripId.name

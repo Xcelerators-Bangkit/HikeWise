@@ -70,6 +70,10 @@ class ProfileFragment : Fragment() {
         userPreference = UserPreference.getInstance(requireContext().dataStore)
         viewModel = ViewModelProvider(this, ViewModelFactory.getInstance(requireContext())).get(GetUserDetailViewModel::class.java)
 
+        viewModel.isLoading.observe(viewLifecycleOwner) {
+            binding.loadingProfile.visibility = if (it) View.VISIBLE else View.GONE
+        }
+
         GlobalScope.launch {
             val emailUser = userPreference.getUserEmail.first()
             if (emailUser != null) {

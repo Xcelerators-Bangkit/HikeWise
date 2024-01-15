@@ -1,124 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.DetailMountainActivity">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView_mountain"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="340dp"
-        android:layout_marginTop="-20dp"
-        app:cardCornerRadius="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:strokeWidth="0dp">
+        android:layout_height="wrap_content"
+        >
 
-        <ImageView
-            android:id="@+id/imv_mountain"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView_mountain"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:transitionName="image"
+            android:layout_height="340dp"
+            android:layout_marginTop="-20dp"
+            app:cardCornerRadius="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            app:strokeWidth="0dp">
 
-    </com.google.android.material.card.MaterialCardView>
+            <ImageView
+                android:id="@+id/imv_mountain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:transitionName="image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
 
-
-    <TextView
-        android:id="@+id/tv_title_mountain"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="60dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/mountain_name"
-        android:textColor="@color/primary"
-        android:textSize="24sp"
-        android:transitionName="title"
-        app:layout_constraintEnd_toStartOf="@+id/tv_count_mountain"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView_mountain" />
+        </com.google.android.material.card.MaterialCardView>
 
 
-    <TextView
-        android:id="@+id/tv_count_mountain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/price"
-        android:textAlignment="center"
-        android:textColor="@color/primary"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_title_mountain"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_title_mountain" />
+        <TextView
+            android:id="@+id/tv_title_mountain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="60dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/mountain_name"
+            android:textColor="@color/primary"
+            android:textSize="24sp"
+            android:transitionName="title"
+            app:layout_constraintEnd_toStartOf="@+id/tv_count_mountain"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_mountain" />
 
 
-    <TextView
-        android:id="@+id/tv_location"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/location"
-        android:textColor="@color/light_grey"
-        android:textSize="14sp"
-        android:transitionName="location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_ketinggian" />
+        <TextView
+            android:id="@+id/tv_count_mountain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/price"
+            android:textAlignment="center"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title_mountain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_title_mountain" />
 
-    <TextView
-        android:id="@+id/tv_ketinggian"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/ketinggian"
-        android:textColor="@color/light_grey"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_mountain" />
 
-    <TextView
-        android:id="@+id/tv_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/status"
-        android:textColor="@color/light_grey"
-        android:textSize="14sp"
-        android:transitionName="status"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_ketinggian"
-        app:layout_constraintEnd_toEndOf="@+id/tv_count_mountain"
-        app:layout_constraintTop_toTopOf="@+id/tv_ketinggian" />
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/location"
+            android:textSize="14sp"
+            android:transitionName="location"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ketinggian" />
 
-    <TextView
-        android:id="@+id/tv_desc_mountain"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="15dp"
-        android:fontFamily="@font/poppins_regular"
-        android:gravity="start|end"
-        android:text="@string/desc_mountain"
-        android:textColor="@color/light_grey"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+        <TextView
+            android:id="@+id/tv_ketinggian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/ketinggian"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_mountain" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/status"
+            android:textSize="14sp"
+            android:transitionName="status"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_ketinggian"
+            app:layout_constraintEnd_toEndOf="@+id/tv_count_mountain"
+            app:layout_constraintTop_toTopOf="@+id/tv_ketinggian" />
+
+        <TextView
+            android:id="@+id/tv_desc_mountain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="25dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/desc_mountain"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_location"
+            app:layout_constraintStart_toStartOf="@+id/tv_location"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -14,12 +14,17 @@ class GetUserDetailViewModel(private val userRepository: UserRepository) : ViewM
     private val _userDetail = MutableLiveData<GetUserDetailResponse>()
     val userDetail : LiveData<GetUserDetailResponse> = _userDetail
 
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> = _isLoading
+
 
     fun getUserDetail(userEmail: String){
         viewModelScope.launch {
+            _isLoading.value = true
             try {
                 val response = userRepository.getUserDetail(userEmail)
                 _userDetail.postValue(response)
+                _isLoading.value = false
             } catch (e: Exception){
                 Log.d("GetUserDetailViewModel", e.message.toString())
             }

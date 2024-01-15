@@ -18,7 +18,12 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.get
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.hikewise.R
+import com.example.hikewise.adapter.CheckEquipmentAdapter
+import com.example.hikewise.data.checkEquipment.EquipmentsViewModel
+import com.example.hikewise.data.checkEquipment.EquipmentsViewModelFactory
 import com.example.hikewise.data.equipment.EquipmentEntity
 import com.example.hikewise.databinding.ActivityEquipmentBinding
 import com.example.hikewise.databinding.ActivityImageProcessBinding
@@ -39,6 +44,7 @@ class ImageProcessActivity : AppCompatActivity() {
     private lateinit var binding: ActivityImageProcessBinding
     private lateinit var viewModel: MachineViewModel
     private lateinit var equipmentVieWModel : InsertViewModel
+    private lateinit var equipmentsViewModel: EquipmentsViewModel
 
     private var currentImageUri: Uri? = null
 
@@ -52,6 +58,20 @@ class ImageProcessActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this, MachineFactory.getInstance(this)).get(MachineViewModel::class.java)
         equipmentVieWModel = ViewModelProvider(this, EquipmentViewModelFactory.getInstance(this)).get(InsertViewModel::class.java)
+        equipmentsViewModel = ViewModelProvider(this, EquipmentsViewModelFactory.getInstance()).get(EquipmentsViewModel::class.java)
+
+        equipmentsViewModel.loadEquipments()
+        equipmentsViewModel.equipmentsLiveData.observe(this) { equipments ->
+            if (equipments != null) {
+                val adapter = CheckEquipmentAdapter()
+                binding.rvCheckEquipment.layoutManager = GridLayoutManager(this, 2)
+                binding.rvCheckEquipment.adapter = adapter
+                adapter.submitList(equipments)
+                adapter.notifyDataSetChanged()
+            }
+        }
+
+
 
         binding.btCamera.setOnClickListener {
             startCamera()

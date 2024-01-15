@@ -13,6 +13,7 @@ import com.example.hikewise.adapter.MountainAdapter
 import com.example.hikewise.databinding.FragmentHomeBinding
 import com.example.hikewise.model.GetAllArticleViewModel
 import com.example.hikewise.model.GetAllMountainViewModel
+import com.example.hikewise.model.GetMountainandArticle
 import com.example.hikewise.model.ViewModelFactory
 import com.example.hikewise.ui.AllArticleActivity
 import com.example.hikewise.ui.BookingActivity
@@ -27,6 +28,8 @@ class HomeFragment : Fragment() {
     private lateinit var article : GetAllArticleViewModel
     private lateinit var adapter: MountainAdapter
     private lateinit var articleAdapter : ArticleAdapter
+    private lateinit var viewModel : GetMountainandArticle
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,17 +42,27 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         mountain = ViewModelProvider(this, ViewModelFactory.getInstance(requireContext())).get(GetAllMountainViewModel::class.java)
         article = ViewModelProvider(this, ViewModelFactory.getInstance(requireContext())).get(GetAllArticleViewModel::class.java)
+        viewModel = ViewModelProvider(this, ViewModelFactory.getInstance(requireContext())).get(GetMountainandArticle::class.java)
         adapter = MountainAdapter()
         binding.recyclerViewMountain.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewMountain.adapter = adapter
         binding.recyclerViewMountain.setHasFixedSize(true)
 
 
+        viewModel.isLoading.observe(viewLifecycleOwner) {
+            binding.loading.visibility = if (it) View.VISIBLE else View.GONE
+        }
 
-        mountain.getAllMountain()
-        mountain.mountain.observe(viewLifecycleOwner) {
+        viewModel.getAllMountain()
+        viewModel.mountain.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
+
+
+//        mountain.getAllMountain()
+//        mountain.mountain.observe(viewLifecycleOwner) {
+//            adapter.submitList(it)
+//        }
 
 
         articleAdapter = ArticleAdapter()
@@ -57,10 +70,15 @@ class HomeFragment : Fragment() {
         binding.recyclerViewArticle.adapter = articleAdapter
         binding.recyclerViewArticle.setHasFixedSize(true)
 
-        article.getAllArticle()
-        article.article.observe(viewLifecycleOwner) {
+        viewModel.getAllArticle()
+        viewModel.article.observe(viewLifecycleOwner) {
             articleAdapter.submitList(it)
         }
+
+//        article.getAllArticle()
+//        article.article.observe(viewLifecycleOwner) {
+//            articleAdapter.submitList(it)
+//        }
 
 
         binding.apply {

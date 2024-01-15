@@ -55,6 +55,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
+
 
 //    DATABASE
     implementation("androidx.room:room-runtime:2.6.1")
@@ -94,6 +96,11 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth-ktx:22.2.0")
     implementation("com.google.firebase:firebase-storage-ktx:20.3.0")
+    implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation("com.google.firebase:firebase-core:21.1.1")
+//    implementation("com.google.firebase:firebase-database-ktx:20.3.0")
+//    implementation("com.google.firebase:firebase-core-ktx:21.1.1")
+
 
     
 

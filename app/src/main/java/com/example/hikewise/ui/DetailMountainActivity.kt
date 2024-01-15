@@ -25,9 +25,9 @@ class DetailMountainActivity : AppCompatActivity() {
             binding.tvCountMountain.text = mountain.price.toString()
             binding.tvKetinggian.text = mountain.elevation.toString()
             binding.tvLocation.text = mountain.location
+            binding.tvDescMountain.text = mountain.about
             val status = if (mountain.openStatus == true) "Open" else "Closed"
             binding.tvStatus.text = status
-            binding.tvDescMountain.visibility = View.GONE
 
         }
 

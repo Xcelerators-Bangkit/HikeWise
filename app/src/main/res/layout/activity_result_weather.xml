@@ -24,7 +24,7 @@
         android:id="@+id/searchView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:hint="User"
+        android:hint="City"
         app:layout_anchor="@id/searchBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

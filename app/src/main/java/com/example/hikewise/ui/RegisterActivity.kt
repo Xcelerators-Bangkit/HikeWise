@@ -14,6 +14,7 @@ import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
 import com.example.hikewise.R
@@ -22,12 +23,16 @@ import com.example.hikewise.model.RegisterViewModel
 import com.example.hikewise.model.ViewModelFactory
 import com.example.hikewise.response.RegisterRequest
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var viewmodel: RegisterViewModel
+    private lateinit var databaseReference: DatabaseReference
 
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,15 +79,37 @@ class RegisterActivity : AppCompatActivity() {
                         }
 
                     }
-                    val dialog = AlertDialog.Builder(this)
-                    dialog.setTitle("Register Success")
-                    dialog.setMessage("You have successfully registered")
-                    dialog.setPositiveButton("OK") { _, _ ->
-                        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-                        startActivity(intent)
-                        finish()
+
+                    val user : FirebaseUser? = auth.currentUser!!
+                    val userId = user!!.uid
+
+                    databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(userId)
+
+                    val hashMap:HashMap<String,String> = HashMap()
+                    hashMap.put("userId",userId)
+                    hashMap.put("userName",nameUser)
+                    hashMap.put("profileImage","")
+
+                    databaseReference.setValue(hashMap).addOnCompleteListener(this) {
+                        if (it.isSuccessful){
+                            binding.editTextName.setText("")
+                            binding.emailEditText.setText("")
+                            binding.passwordEditText.setText("")
+
+                            val dialog = AlertDialog.Builder(this)
+                            dialog.setTitle("Register Success")
+                            dialog.setMessage("You have successfully registered")
+                            dialog.setPositiveButton("OK") { _, _ ->
+                                val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            }
+                            dialog.show()
+
+                        }
                     }
-                    dialog.show()
+
+
                 } else {
                     val dialog = AlertDialog.Builder(this)
                     dialog.setTitle("Register Failed")

@@ -28,6 +28,9 @@ data class DataItem(
 	@field:SerializedName("name")
 	val name: String? = null,
 
+	@field:SerializedName("about")
+	val about: String? = null,
+
 	@field:SerializedName("location")
 	val location: String? = null,
 
