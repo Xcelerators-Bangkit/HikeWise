@@ -16,6 +16,7 @@ import com.example.hikewise.pref.ThemePreference
 import com.example.hikewise.pref.ThemeViewModel
 import com.example.hikewise.pref.ThemeViewModelFactory
 import com.example.hikewise.pref.dataStore
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -24,6 +25,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashScreenBinding
     private lateinit var mainViewModel: ThemeViewModel
+    private  var firebaseUser: FirebaseUser? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +50,7 @@ class SplashScreenActivity : AppCompatActivity() {
         window.exitTransition = fade
         Handler().postDelayed({
             val user = Firebase.auth.currentUser
+
             val intent = if (user != null) {
                 Intent(this, MainActivity::class.java)
             } else {

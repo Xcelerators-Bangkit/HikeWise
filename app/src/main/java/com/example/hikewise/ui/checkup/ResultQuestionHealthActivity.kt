@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import com.example.hikewise.MyApplication
+import com.example.hikewise.adapter.QuestionListAdapter
 import com.example.hikewise.data.question.QuestionRepository
 import com.example.hikewise.data.question.QuestionViewModel
 import com.example.hikewise.data.question.QuestionViewModelFactory

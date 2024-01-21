@@ -78,9 +78,11 @@
         android:layout_height="120dp"
         android:layout_marginTop="35dp"
         android:scaleType="centerCrop"
+        android:src="@drawable/image_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="5dp"/>
 
     <ImageView
         android:id="@+id/edit_image"

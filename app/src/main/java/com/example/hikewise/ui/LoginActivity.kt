@@ -34,6 +34,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
+
     private lateinit var viewmodel: LoginViewModel
     private lateinit var userPreference: UserPreference
 

@@ -1,6 +1,7 @@
 package com.example.hikewise.ui
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
@@ -95,6 +96,11 @@ class MainActivity : AppCompatActivity() {
             when(menuItem.itemId){
                 R.id.action_theme -> {
                     toggleNightMode()
+                    true
+                }
+                R.id.action_chat -> {
+                    val intent = Intent(this, UserActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false

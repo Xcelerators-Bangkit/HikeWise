@@ -22,13 +22,17 @@ import com.example.hikewise.pref.dataStore
 import com.example.hikewise.pref.user.UserPreference
 import com.example.hikewise.ui.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import java.util.HashMap
 import java.util.UUID
 
 
@@ -36,6 +40,8 @@ class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
     private lateinit var auth: FirebaseAuth
+    private lateinit var firebaseUser: FirebaseUser
+    private lateinit var databaseReference: DatabaseReference
     private lateinit var viewModel: GetUserDetailViewModel
     private lateinit var userPreference: UserPreference
     private val storageReference = FirebaseStorage.getInstance().reference
@@ -58,6 +64,10 @@ class ProfileFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         val updatedUser = FirebaseAuth.getInstance().currentUser
         val updatedPhotoUrl = updatedUser?.photoUrl?.toString()
+        firebaseUser = FirebaseAuth.getInstance().currentUser!!
+
+        databaseReference =
+            FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.uid)
 
         // Tampilkan gambar di ImageView (misalnya, binding.profileImage)
         updatedPhotoUrl?.let {
@@ -151,6 +161,9 @@ class ProfileFragment : Fragment() {
             .addOnSuccessListener { taskSnapshot ->
                 imageReference.downloadUrl.addOnSuccessListener { uri ->
                     val downloadUrl = uri.toString()
+                    val hashMap: HashMap<String, String> = HashMap()
+                    hashMap["profileImage"] = downloadUrl
+                    databaseReference.updateChildren(hashMap as Map<String, Any>)
                     updateUserProfilePhoto(downloadUrl)
                     binding.loading.visibility = View.GONE
                     // Now you can save the downloadUrl to your database or use it as needed

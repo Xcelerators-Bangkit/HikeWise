@@ -53,6 +53,14 @@ class QuestionListAdapter(
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    fun clearFocusSelectedOption() {
+        for (question in currentList) {
+            question.selectedOption = null
+        }
+        notifyDataSetChanged()
+    }
+
     class QuestionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val questionText: TextView = itemView.findViewById(R.id.question_health)
         val radioGroup: RadioGroup = itemView.findViewById(R.id.rg_question_health)
@@ -67,4 +75,6 @@ class QuestionListAdapter(
             return oldItem == newItem
         }
     }
+
+
 }
